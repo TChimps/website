@@ -1,7 +1,7 @@
 # website
 Website development files
 
-# Project Todo List
+# Todo List
 
 - [X] Finish Service Page
 - [X] Rotating Cards on Home Page
