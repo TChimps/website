@@ -10,7 +10,7 @@
 
 (function () {
   // Configuration
-  const RECIPIENT = "fuelgreenev@gmail.com";
+  const RECIPIENT = "asktechchimps@gmail.com";
   // Conservative mailto length threshold; browsers/clients may disagree on limits.
   const MAILTO_SAFE_LENGTH = 2000;
 
