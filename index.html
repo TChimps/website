@@ -1,205 +1,30 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="auto">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Custom Website Development for Local Businesses</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header class="header">
-    <div class="container">
-      <nav class="navbar">
-	  <a href="index.html"><img src="LogoNew.png" alt="Tech Buddy Logo" style="height: 80px;" /></a>
-        <!-- <div class="logo">
-          <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
-            <img src="logo-tech-buddy.svg" alt="Tech Buddy Logo" class="logo-img" />
-            <span class="logo-text">Tech Buddy</span>
-          </a>
-        </div> -->
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="about-us.html">About Us</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="hero">
-        <div class="hero-content" style="width:100%;">
-          <div class="carousel-container" id="hero-carousel">
-            <!-- Cards -->
-            <div class="carousel-card" data-index="0" style="display: flex;">
-              <div class="carousel-title">Custom Website Development<br>for Local Businesses</div>
-              <div class="carousel-desc">
-                We help local businesses grow by building modern, responsive websites tailored to your needs and brand.
-              </div>
-              <a href="#contact" class="cta-btn carousel-btn">Get Started</a>
-            </div>
-            <div class="carousel-card" data-index="1" style="display: none;">
-              <div class="carousel-title">🎉 Promotions: Save 20% This Month!</div>
-              <div class="carousel-desc">
-                Summer Special: Launch your new website and get 20% off any development package. Let Tech Buddy put your business online for less!
-              </div>
-              <a href="#contact" class="cta-btn carousel-btn">Claim Offer</a>
-            </div>
-            <div class="carousel-card" data-index="2" style="display: none;">
-              <div class="carousel-title">🌟 What Makes Us Different?</div>
-              <div class="carousel-desc">
-                Local expertise, personal support, and affordable pricing—no templates, no hidden fees. We build sites that work for your community.
-              </div>
-              <a href="about-us.html" class="cta-btn carousel-btn">About Tech Buddy</a>
-            </div>
-            <div class="carousel-card" data-index="3" style="display: none;">
-              <div class="carousel-title">🛟 Need Help With Tech?</div>
-              <div class="carousel-desc">
-                We also offer IT setup and support—computers, networks, email, and more. Get friendly help for your business technology!
-              </div>
-              <a href="services.html" class="cta-btn carousel-btn">See IT Services</a>
-            </div>
-          </div>
-          <div class="carousel-indicators" id="carousel-indicators">
-            <!-- Dots will be injected by JS -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <section class="services" id="services">
-      <div class="container">
-        <h2>Our Core Services</h2>
-        <div class="services-list">
-          
-		  <div class="service-card">
-            <img src="https://globaliasoft.com/wp-content/uploads/2021/10/Custom-website-designs.png" alt="Web Development" />
-            <h3>Web Development</h3>
-            <p>Custom websites, responsive layouts, CMS setups, basic SEO, and e-commerce options — designed to convert local customers.</p>
-			<a href="services.html#web-development" class="read-more-btn cta-btn" aria-label="Read more about web development">Read more</a>
-          </div>
-          
-		  <div class="service-card">
-            <img src="https://img.freepik.com/free-vector/flat-design-responsive-website-design_23-2149483806.jpg" alt="IT Setup & Services" />
-            <h3>IT Setup & Services</h3>
-            <p>Computer setup, network & email configuration, printer support, security and backups — friendly tech help for your business.</p>
-			<a href="services.html#it-setup" class="read-more-btn cta-btn" aria-label="Read more about web development">Read more</a>
-          </div>
-          
-		  <div class="service-card">
-            <img src="https://continuing.mcmaster.ca/app/uploads/2022/07/mcmaster-continuing-education_Marketing_Learning-Outcomes.jpg" alt="Moving Tech" />
-            <h3>Moving Tech</h3>
-            <p>Office or home moves: disassembly & reassembly, cable management, peripheral reconnection and on-site network setup.</p>
-			<a href="services.html#moving-tech" class="read-more-btn cta-btn" aria-label="Read more about web development">Read more</a>
-          </div>
-		  
-		  <div class="service-card">
-            <img src="https://th.bing.com/th/id/R.9f1549d4d986914654e5634be421aae3?rik=uSB27v%2fBW7wokw&riu=http%3a%2f%2fwww.pngall.com%2fwp-content%2fuploads%2f5%2fDigital-Marketing-PNG-Picture.png&ehk=6VahsirVY6y9LJqZBM5P3RLOCDpGgABE2LR6dDmnPOw%3d&risl=&pid=ImgRaw&r=0" alt="Moving Tech" />
-            <h3>Digital Marketing</h3>
-            <p>Targeted SEO, social media, and PPC strategies to grow your reach and drive results.</p>
-			<a href="services.html#digital-marketing" class="read-more-btn cta-btn" aria-label="Read more about digital marketing">Read more</a>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="why-us" id="why-us">
-      <div class="container">
-        <!-- Make the section title link to about-us.html -->
-        <h2><a href="about-us.html" style="text-decoration:none; color:inherit;">About Us</a></h2>
-
-        <div class="why-list">
-          <div class="why-card">
-            <a href="about-us.html" style="text-decoration:none; color:inherit; display:block;">
-              <img src="https://media.istockphoto.com/id/1127448343/photo/partnership-of-business-concept.jpg?s=612x612&w=0&k=20&c=HJx6uc0R-pkASmf6H6psyZH8qhNXwNZ12k8TfnVWKQY=" alt="Local Expertise placeholder" />
-              <h4>Local Expertise</h4>
-              <p>We know your audience and community, so your website speaks directly to local customers.</p>
-            </a>
-          </div>
-          <div class="why-card">
-            <a href="about-us.html" style="text-decoration:none; color:inherit; display:block;">
-              <img src="https://asiainc500.com/wp-content/uploads/2021/03/technology12.jpg" alt="Modern Tech placeholder" />
-              <h4>Modern Technology</h4>
-              <p>We use the latest web standards and tools for speed, security, and accessibility.</p>
-            </a>
-          </div>
-          <div class="why-card">
-            <a href="about-us.html" style="text-decoration:none; color:inherit; display:block;">
-              <img src="https://continuing.mcmaster.ca/app/uploads/2022/07/mcmaster-continuing-education_Marketing_Learning-Outcomes.jpg" alt="Personal Support placeholder" />
-              <h4>Personal Support</h4>
-              <p>Friendly, one-on-one support from design to launch and beyond.</p>
-            </a>
-          </div>
-        </div>
-
-        <!-- Centered CTA linking to the full about page -->
-        <div style="text-align:center; margin-top:1.25rem;">
-          <a href="about-us.html" class="cta-btn" aria-label="Learn more about Tech Buddy">Learn more about us</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <div class="container">
-        <h2>Contact Us</h2>
-        <form id="contact-form" class="contact-form">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Your Name" required />
-          
-          <label for="business">Business Name</label>
-          <input type="text" id="business" name="business" placeholder="Your Business" required />
-          
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="your@email.com" required />
-          
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="4" placeholder="How can we help?"></textarea>
-          
-          <button type="submit" class="cta-btn">Send Message</button>
-        </form>
-      </div>
-    </section>
-	
-	
-	<noscript>
-        <p>Please enable JavaScript to open your mail app directly from this form. Alternatively, send an email to <a href="mailto:fuelgreenev@gmail.com">fuelgreenev@gmail.com</a>.</p>
-    </noscript>
-	  	<!-- Modal that informs the user the mail composer opened -->
-<div id="mailtoModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="mailtoModalTitle" style="display:none;align-items:center;justify-content:center;">
-  <div class="modal" role="document" style="max-width:420px;padding:18px;border-radius:8px;background:#fff;box-shadow:0 8px 28px rgba(0,0,0,0.25);">
-    <h2 id="mailtoModalTitle" style="margin:0 0 8px 0;font-size:18px;">Message composer opened</h2>
-    <p id="mailtoModalText" style="margin:0 0 12px 0;color:#333;">
-      Your default mail app should have opened. Please review and send the message from your mail app. After sending (or if you close the mail app), click OK to return to the homepage.
-    </p>
-    <div class="actions" style="text-align:right;">
-      <button id="modalOk" aria-label="Close" style="padding:8px 12px;cursor:pointer;">OK</button>
-    </div>
+<div class="carousel">
+  <h2>Outsourcing Services</h2>
+  <div class="carousel-item">
+    <h3>Grow Your Business by Delegating Operations</h3>
+  </div>
+  <div class="carousel-item">
+    <h3>Cut Operational Costs by Outsourcing Billing</h3>
+  </div>
+  <div class="carousel-item">
+    <h3>24/7 Tech Support Without Hiring Full-Time Staff</h3>
+  </div>
+  <div class="carousel-item">
+    <h3>Streamline Your Business Processes</h3>
   </div>
 </div>
 
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="about-us.html">About Us</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <p>&copy; 2025 Tech Chimps. All rights reserved.</p>
-    </div>
-  </footer>
-  
-  <script src="mailto.js"></script>
-  <script src="theme-switch.js"></script>
-  <script src="carousel.js"></script>
-  <button id="scrollUpBtn" title="Go to top" aria-label="Go to top">
-    <svg viewBox="0 0 24 24">
-      <path d="M12 4c.28 0 .53.11.71.29l7 7a1 1 0 01-1.42 1.42L13 7.41V20a1 1 0 01-2 0V7.41l-5.29 5.3A1 1 0 014.29 11.3l7-7A1 1 0 0112 4z" fill="#fff"/>
-    </svg>
-  </button>
-
-</body>
-</html>
+<div class="services">
+  <h2>Our Services</h2>
+  <ul>
+    <li>Billing Outsourcing</li>
+    <li>Tech Support Outsourcing</li>
+    <li>Process Improvement</li>
+    <li>Accounts Payable/Receivable</li>
+    <li>Data Entry & Admin Support</li>
+    <li>Help Desk & Remote Support</li>
+    <li>Workflow Automation</li>
+  </ul>
+  <h3>Pricing</h3>
+  <p>Please contact us for pricing details.</p>
+</div>
