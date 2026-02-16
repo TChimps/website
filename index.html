@@ -6,6 +6,32 @@
   <title>Tech Chimps | Grow Your Business by Delegating Operations</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Styles for the Trust Bar and Process sections */
+    .trust-bar { padding: 2rem 0; background: var(--card-bg); text-align: center; border-bottom: 1px solid rgba(0,0,0,0.05); }
+    .trust-logos { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; align-items: center; opacity: 0.7; margin-top: 1rem; }
+    .trust-logos span { font-weight: 700; font-size: 1.2rem; color: var(--text-color); }
+    
+    .process-step { position: relative; padding: 2rem; text-align: center; }
+    .process-number { font-size: 3rem; font-weight: 800; color: #4361ee; opacity: 0.2; position: absolute; top: 0; left: 50%; transform: translateX(-50%); }
+    
+    /* Contact Section Layout */
+    .contact-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 4rem; align-items: start; }
+    .contact-form-wrapper { background: var(--card-bg); padding: 2.5rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
+    
+    /* Updated field width to 93% and unified font-family */
+    .form-group input, .form-group textarea { 
+      width: 93%; 
+      padding: 0.8rem; 
+      border: 1px solid #ddd; 
+      border-radius: 6px; 
+      background: var(--bg-color); 
+      color: var(--text-color);
+      font-family: 'Manrope', sans-serif; /* This ensures the textarea matches the inputs */
+    }
+  </style>
 </head>
 <body>
   <header class="header">
@@ -51,128 +77,139 @@
               <a href="services.html#process-improvement" class="cta-btn carousel-btn">Learn More</a>
             </div>
           </div>
-          <div class="carousel-indicators" id="carousel-indicators">
-            </div>
+          <div class="carousel-indicators" id="carousel-indicators"></div>
         </div>
       </div>
     </div>
   </header>
+
+  <section class="trust-bar">
+    <div class="container">
+      <p style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; opacity: 0.6;">Expertise in the tools you use</p>
+      <div class="trust-logos">
+        <span>SAP S/4 HANA</span>
+        <span>Microsoft Dynamics NAV</span>
+        <span>Microsoft Excel</span>
+        <span>Power Automate</span>
+        <span>Google Workspace</span>
+      </div>
+    </div>
+  </section>
 
   <main>
     <section class="services" id="services">
       <div class="container">
         <h2>Our Core Services</h2>
         <div class="services-list">
-
           <div class="service-card">
             <div style="font-size:2.5rem;margin-bottom:0.9rem;">🧾</div>
             <h3>Billing Outsourcing</h3>
             <p>We handle invoicing, accounts payable/receivable, and expense management—accurately, securely, and on time.</p>
             <a href="services.html#billing-outsourcing" class="read-more-btn cta-btn">Learn More</a>
           </div>
-          
           <div class="service-card">
             <div style="font-size:2.5rem;margin-bottom:0.9rem;">💻</div>
             <h3>Tech Support Outsourcing</h3>
             <p>Help desk, user support, remote troubleshooting, ticket management, and proactive tech solutions.</p>
             <a href="services.html#tech-support" class="read-more-btn cta-btn">Learn More</a>
           </div>
-          
           <div class="service-card">
             <div style="font-size:2.5rem;margin-bottom:0.9rem;">⚙️</div>
             <h3>Process Improvement & Automation</h3>
             <p>We analyze, document, and automate your workflows so your business runs smarter and more efficiently.</p>
             <a href="services.html#process-improvement" class="read-more-btn cta-btn">Learn More</a>
           </div>
-          
           <div class="service-card">
             <div style="font-size:2.5rem;margin-bottom:0.9rem;">📄</div>
             <h3>Data Entry & Admin Support</h3>
             <p>Accurate and confidential data entry, document processing, scheduling, and back-office support.</p>
             <a href="services.html#data-entry" class="read-more-btn cta-btn">Learn More</a>
           </div>
-          
           <div class="service-card">
             <div style="font-size:2.5rem;margin-bottom:0.9rem;">🖥️</div>
             <h3>Help Desk & Remote Support</h3>
             <p>Responsive remote help desk and troubleshooting for your team and customers—fast, friendly, and reliable.</p>
             <a href="services.html#help-desk" class="read-more-btn cta-btn">Learn More</a>
           </div>
-          
           <div class="service-card">
             <div style="font-size:2.5rem;margin-bottom:0.9rem;">🔄</div>
             <h3>Workflow Automation</h3>
             <p>Automate routines and integrate your favorite business tools for maximum productivity and consistency.</p>
             <a href="services.html#workflow-automation" class="read-more-btn cta-btn">Learn More</a>
           </div>
-
         </div>
       </div>
     </section>
 
-    <section class="why-us" id="why-us">
+    <section style="padding: 5rem 0; background: var(--bg-color);">
       <div class="container">
-        <h2><a href="about-us.html" style="text-decoration:none; color:inherit;">Why Choose Tech Chimps?</a></h2>
-        <div class="why-list">
-          <div class="why-card">
-            <a href="about-us.html" style="text-decoration:none; color:inherit; display:block;">
-              <div style="font-size:3.5rem; margin-bottom:1rem; text-align:center;">🤝</div>
-              <h4>Proven Outsourcing Partner</h4>
-              <p>Experience, reliability, and a dedication to your bottom line. We let you focus on growth, not busywork.</p>
-            </a>
+        <h2 style="text-align: center; margin-bottom: 3rem;">How It Works</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+          <div class="process-step">
+            <div class="process-number">01</div>
+            <h4>Consult</h4>
+            <p>We meet to identify your operational bottlenecks and manual pain points.</p>
           </div>
-          <div class="why-card">
-            <a href="about-us.html" style="text-decoration:none; color:inherit; display:block;">
-              <div style="font-size:3.5rem; margin-bottom:1rem; text-align:center;">🚀</div>
-              <h4>Tech-Driven Excellence</h4>
-              <p>We use workflow automation, process documentation, and digital tools to keep your business competitive.</p>
-            </a>
+          <div class="process-step">
+            <div class="process-number">02</div>
+            <h4>Integrate</h4>
+            <p>Our team syncs with your tools and documents the new streamlined workflow.</p>
           </div>
-          <div class="why-card">
-            <a href="about-us.html" style="text-decoration:none; color:inherit; display:block;">
-              <div style="font-size:3.5rem; margin-bottom:1rem; text-align:center;">🎧</div>
-              <h4>Personal, Ongoing Support</h4>
-              <p>From onboarding to day-to-day, our friendly experts are always ready to help you succeed.</p>
-            </a>
+          <div class="process-step">
+            <div class="process-number">03</div>
+            <h4>Scale</h4>
+            <p>We handle the daily operations while you focus entirely on high-level growth.</p>
           </div>
-        </div>
-        <div style="text-align:center; margin-top:1.25rem;">
-          <a href="about-us.html" class="cta-btn" aria-label="Learn more about Tech Chimps">Learn more about us</a>
         </div>
       </div>
     </section>
 
-    <section class="contact" id="contact">
+    <section class="contact" id="contact" style="padding: 5rem 0; background: var(--bg-color);">
       <div class="container">
-        <h2>Contact Us</h2>
-        <form id="contact-form" class="contact-form">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Your Name" required />
-          <label for="business">Business Name</label>
-          <input type="text" id="business" name="business" placeholder="Your Business" required />
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="your@email.com" required />
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="4" placeholder="How can we help?"></textarea>
-          <button type="submit" class="cta-btn">Send Message</button>
-        </form>
-      </div>
-    </section>
+        <div class="contact-container">
+          <div class="contact-info">
+            <h2 style="text-align: left; margin-bottom: 1.5rem;">Let’s Get Started</h2>
+            <p style="margin-bottom: 2rem; font-size: 1.1rem; opacity: 0.8;">
+              Ready to reclaim your time? Fill out the form, and our operations experts will reach out within 24 hours to discuss your custom strategy.
+            </p>
+            <div style="margin-bottom: 1.5rem; display: flex; gap: 1rem; align-items: center;">
+              <div style="font-size: 1.5rem;">📍</div>
+              <div><strong>Location:</strong> Toronto, Ontario, Canada</div>
+            </div>
+            <div style="margin-bottom: 1.5rem; display: flex; gap: 1rem; align-items: center;">
+              <div style="font-size: 1.5rem;">📧</div>
+              <div><strong>Email:</strong> <a href="mailto:techchimps@outlook.com" style="color: #4361ee; text-decoration: none;">techchimps@outlook.com</a></div>
+            </div>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+              <div style="font-size: 1.5rem;">🕒</div>
+              <div><strong>Response Time:</strong> Within 1 Business Day</div>
+            </div>
+          </div>
 
-    <noscript>
-      <p>Please enable JavaScript to open your mail app directly from this form. Alternatively, send an email to <a href="mailto:asktechchimps@gmail.com">asktechchimps@gmail.com</a>.</p>
-    </noscript>
-    <div id="mailtoModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="mailtoModalTitle" style="display:none;align-items:center;justify-content:center;">
-      <div class="modal" role="document" style="max-width:420px;padding:18px;border-radius:8px;background:#fff;box-shadow:0 8px 28px rgba(0,0,0,0.25);">
-        <h2 id="mailtoModalTitle" style="margin:0 0 8px 0;font-size:18px;">Message composer opened</h2>
-        <p id="mailtoModalText" style="margin:0 0 12px 0;color:#333;">
-          Your default mail app should have opened. Please review and send the message from your mail app. After sending (or if you close the mail app), click OK to return to the homepage.
-        </p>
-        <div class="actions" style="text-align:right;">
-          <button id="modalOk" aria-label="Close" style="padding:8px 12px;cursor:pointer;">OK</button>
+          <div class="contact-form-wrapper">
+            <form id="contact-form" class="contact-form">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required />
+              </div>
+              <div class="form-group">
+                <label for="business">Business Name</label>
+                <input type="text" id="business" name="business" placeholder="Company Inc." required />
+              </div>
+              <div class="form-group">
+                <label for="email">Work Email</label>
+                <input type="email" id="email" name="email" placeholder="john@company.com" required />
+              </div>
+              <div class="form-group">
+                <label for="message">How can we help?</label>
+                <textarea id="message" name="message" rows="4" placeholder="Tell us about your current bottlenecks..."></textarea>
+              </div>
+              <button type="submit" class="cta-btn" style="width: 100%;">Send My Strategy Plan</button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   </main>
 
   <footer class="footer">
