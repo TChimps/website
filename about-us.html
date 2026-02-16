@@ -3,15 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us | Tech Chimps</title>
+  <title>About Us | Tech Chimps - Operations Experts in Toronto</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Visual Polish for Process Numbers */
+    .process-step { position: relative; padding: 2rem; text-align: center; }
+    .process-number { font-size: 3rem; font-weight: 800; color: #4361ee; opacity: 0.2; position: absolute; top: 0; left: 50%; transform: translateX(-50%); }
+  </style>
 </head>
 <body>
   <header class="header">
     <div class="container">
       <nav class="navbar">
-        <a href="index.html"><img src="LogoNew.png" alt="Tech Chimps Logo" style="height: 70px;" /></a>
+        <a href="index.html"><img src="LogoNew.png" alt="Tech Chimps Logo" style="height: 80px;" /></a>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="services.html">Services</a></li>
@@ -23,7 +28,7 @@
         <div class="hero-content">
           <h1>About Tech Chimps</h1>
           <p>
-            We are dedicated to helping businesses scale by taking the weight of operational tasks off their shoulders.
+            Based in Toronto, we are dedicated to helping businesses scale by taking the weight of operational tasks off their shoulders.
           </p>
         </div>
       </div>
@@ -37,7 +42,7 @@
           <h2>Our Mission</h2>
           <p>
             At Tech Chimps, our mission is to provide reliable, tech-driven outsourcing solutions that allow entrepreneurs and teams to focus on what they do best: growing their business. 
-            We believe that operational excellence shouldn't be a luxury, but a standard for every growing company.
+            We believe that operational excellence shouldn't be a luxury, but a standard for every growing company in Toronto and beyond.
           </p>
         </div>
 
@@ -63,28 +68,27 @@
 
     <section style="background: var(--card-bg); padding: 5rem 0; border-top: 1px solid rgba(0,0,0,0.05); border-bottom: 1px solid rgba(0,0,0,0.05);">
       <div class="container">
-        <h2 style="text-align:center; margin-bottom: 3rem;">How We Work</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;">
-          <div>
-            <div style="font-size: 2.5rem; color: #4361ee; font-weight: 800; margin-bottom: 1rem; opacity: 0.3;">01</div>
-            <h4 style="margin-bottom: 0.5rem;">Analyze</h4>
-            <p style="font-size: 0.95rem;">We identify your current manual bottlenecks and pain points.</p>
+        <h2 style="text-align:center; margin-bottom: 3rem;">How It Works</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+          
+          <div class="process-step">
+            <div class="process-number">01</div>
+            <h4>Consult</h4>
+            <p style="font-size: 0.95rem;">We meet to identify your operational bottlenecks and manual pain points.</p>
           </div>
-          <div>
-            <div style="font-size: 2.5rem; color: #4361ee; font-weight: 800; margin-bottom: 1rem; opacity: 0.3;">02</div>
-            <h4 style="margin-bottom: 0.5rem;">Design</h4>
-            <p style="font-size: 0.95rem;">We build a custom workflow and automation plan tailored to you.</p>
+
+          <div class="process-step">
+            <div class="process-number">02</div>
+            <h4>Integrate</h4>
+            <p style="font-size: 0.95rem;">Our team syncs with your tools and documents the new streamlined workflow.</p>
           </div>
-          <div>
-            <div style="font-size: 2.5rem; color: #4361ee; font-weight: 800; margin-bottom: 1rem; opacity: 0.3;">03</div>
-            <h4 style="margin-bottom: 0.5rem;">Execute</h4>
-            <p style="font-size: 0.95rem;">Our experts take over the operations with precision and care.</p>
+
+          <div class="process-step">
+            <div class="process-number">03</div>
+            <h4>Scale</h4>
+            <p style="font-size: 0.95rem;">We handle the daily operations while you focus entirely on high-level growth.</p>
           </div>
-          <div>
-            <div style="font-size: 2.5rem; color: #4361ee; font-weight: 800; margin-bottom: 1rem; opacity: 0.3;">04</div>
-            <h4 style="margin-bottom: 0.5rem;">Scale</h4>
-            <p style="font-size: 0.95rem;">You reclaim your time to focus 100% on business growth.</p>
-          </div>
+
         </div>
       </div>
     </section>
@@ -154,7 +158,10 @@
     <section class="cta-section" style="background: #4361ee; color: #fff; padding: 5rem 0; text-align: center;">
       <div class="container">
         <h2 style="color: #fff;">Ready to delegate?</h2>
-        <p style="margin-bottom: 2rem; opacity: 0.9; font-size: 1.1rem;">Join the businesses that trust Tech Chimps with their daily operations.</p>
+        <p style="margin-bottom: 2rem; opacity: 0.9; font-size: 1.1rem;">Join the Toronto businesses that trust Tech Chimps with their daily operations.</p>
+        <div style="margin-bottom: 2rem;">
+          <p>📧 <strong>Email us:</strong> <a href="mailto:techchimps@outlook.com" style="color: #fff; text-decoration: underline;">techchimps@outlook.com</a></p>
+        </div>
         <a href="index.html#contact" class="cta-btn" style="background: #fff; color: #4361ee; padding: 1rem 2rem; font-size: 1.1rem;">Get Started Today</a>
       </div>
     </section>
