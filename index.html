@@ -8,19 +8,11 @@
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    .trust-bar { padding: 2rem 0; background: var(--card-bg); text-align: center; border-bottom: 1px solid rgba(0,0,0,0.05); }
-    .trust-logos { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; align-items: center; opacity: 0.7; margin-top: 1rem; }
-    .trust-logos span { font-weight: 700; font-size: 1.2rem; color: var(--text-color); }
-    .process-step { position: relative; padding: 2rem; text-align: center; }
-    .process-number { font-size: 3rem; font-weight: 800; color: #4361ee; opacity: 0.2; position: absolute; top: 0; left: 50%; transform: translateX(-50%); }
-    .contact-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 4rem; align-items: start; }
-    .contact-form-wrapper { background: var(--card-bg); padding: 2.5rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
-    .form-group { margin-bottom: 1.2rem; }
-    .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
-    .form-group input, .form-group textarea {
-      width: 93%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px;
-      background: var(--bg-color); color: var(--text-color); font-family: 'Manrope', sans-serif;
-    }
+    .trust-bar { padding: 2rem 0; background: var(--bg-section); text-align: center; border-bottom: 1px solid var(--border); }
+    .trust-logos { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; align-items: center; opacity: 0.65; margin-top: 1rem; }
+    .trust-logos span { font-weight: 700; font-size: 1.1rem; color: var(--text); }
+    .process-step { position: relative; padding: 2.5rem 1.5rem 1.5rem; text-align: center; }
+    .process-number { font-size: 3rem; font-weight: 800; color: var(--brand); opacity: 0.15; position: absolute; top: 0; left: 50%; transform: translateX(-50%); line-height: 1; }
   </style>
 </head>
 <body>
@@ -34,16 +26,6 @@
     </div>
   </div>
 
-  <!-- Contact Modal -->
-  <div class="modal-overlay" id="mailtoModal">
-    <div class="modal-box">
-      <div style="font-size:2.5rem;margin-bottom:0.5rem;">✅</div>
-      <h3>Message Sent!</h3>
-      <p>Thanks for reaching out. Your email client should have opened with your message ready. Our team will get back to you within 1 business day.</p>
-      <button class="cta-btn" id="modalOk" style="width:100%;">Back to Home</button>
-    </div>
-  </div>
-
   <!-- Geo Banner -->
   <div class="geo-banner">
     <p>🌎 Proudly serving businesses across Canada &amp; the United States <span>— Toronto HQ, global reach</span></p>
@@ -52,42 +34,40 @@
   <header class="header">
     <div class="container">
       <nav class="navbar">
-        <a href="index.html"><img src="LogoNew.png" alt="Tech Chimps Logo" style="height: 80px;" /></a>
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
-        </button>
+        <a href="index.html"><img src="LogoNew.png" alt="Tech Chimps Logo" style="height:80px;" /></a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
         <ul class="nav-links" id="nav-links">
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html" class="active">Home</a></li>
           <li><a href="services.html">Services</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
           <li><a href="about-us.html">About Us</a></li>
           <li><a href="blog.html">Resources</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
+
+      <!-- Hero Carousel -->
       <div class="hero">
         <div class="hero-content" style="width:100%;">
           <div class="carousel-container" id="hero-carousel">
-            <div class="carousel-card" data-index="0" style="display: flex;">
+            <div class="carousel-card" data-index="0" style="display:flex;">
               <div class="carousel-title">Grow Your Business by Delegating Operations</div>
               <div class="carousel-desc">Free your team to focus on growth — Tech Chimps handles your back-office, tech support, and business processes with reliability and expertise.</div>
-              <div style="display:flex;gap:1rem;flex-wrap:wrap;">
-                <a href="#contact" class="cta-btn carousel-btn">Get Started</a>
-                <a href="https://calendly.com/info-techchimps/30min" target="_blank" rel="noopener" class="cta-btn carousel-btn" style="background:rgba(255,255,255,0.15);backdrop-filter:blur(4px);">📅 Book a Call</a>
-              </div>
+              <a href="contact.html" class="cta-btn carousel-btn">Get Started</a>
             </div>
-            <div class="carousel-card" data-index="1" style="display: none;">
+            <div class="carousel-card" data-index="1" style="display:none;">
               <div class="carousel-title">Cut Operational Costs Without Cutting Corners</div>
-              <div class="carousel-desc">Let us manage your billing, invoicing, and accounts. Reduce errors and accelerate cash flow with seamless, secure processes handled by our expert team.</div>
-              <a href="#contact" class="cta-btn carousel-btn">Learn More</a>
+              <div class="carousel-desc">Let us manage your billing, invoicing, and accounts. Reduce errors and accelerate cash flow with seamless, secure processes.</div>
+              <a href="contact.html" class="cta-btn carousel-btn">Learn More</a>
             </div>
-            <div class="carousel-card" data-index="2" style="display: none;">
+            <div class="carousel-card" data-index="2" style="display:none;">
               <div class="carousel-title">Professional Tech Support Without the Full-Time Cost</div>
-              <div class="carousel-desc">Reliable, skilled support whenever you need it. Our remote experts provide user support and troubleshooting — without the overhead of hiring in-house.</div>
-              <a href="#contact" class="cta-btn carousel-btn">Learn More</a>
+              <div class="carousel-desc">Reliable, skilled support whenever you need it — without the overhead of hiring in-house staff.</div>
+              <a href="contact.html" class="cta-btn carousel-btn">Learn More</a>
             </div>
-            <div class="carousel-card" data-index="3" style="display: none;">
+            <div class="carousel-card" data-index="3" style="display:none;">
               <div class="carousel-title">Streamline Your Business Processes</div>
-              <div class="carousel-desc">We analyze, document, and automate your workflows for greater efficiency, consistency, and scalability — so your business runs smarter every day.</div>
+              <div class="carousel-desc">We analyze, document, and automate your workflows for greater efficiency, consistency, and scalability.</div>
               <a href="services.html#process-improvement" class="cta-btn carousel-btn">Learn More</a>
             </div>
           </div>
@@ -100,7 +80,7 @@
   <!-- Tools Trust Bar -->
   <section class="trust-bar">
     <div class="container">
-      <p style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; opacity: 0.6;">Expertise in the tools you use</p>
+      <p style="font-size:0.8rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;opacity:0.5;">Expertise in the tools you use</p>
       <div class="trust-logos">
         <span>SAP S/4 HANA</span>
         <span>Microsoft Dynamics NAV</span>
@@ -113,69 +93,79 @@
 
   <main>
 
-    <!-- Services -->
-    <section class="services" id="services">
+    <!-- Core Services — 3 featured -->
+    <section class="services" id="services" style="padding:5rem 0;">
       <div class="container">
-        <h2 class="reveal">Our Core Services</h2>
+        <h2 class="reveal">What We Do</h2>
+        <p style="text-align:center;color:var(--muted);margin-top:-1rem;margin-bottom:2.5rem;" class="reveal">Outsourced operations so you can focus on what matters.</p>
         <div class="services-list">
           <div class="service-card reveal reveal-delay-1">
             <div style="font-size:2.5rem;margin-bottom:0.9rem;">🧾</div>
             <h3>Billing Outsourcing</h3>
-            <p>We handle invoicing, accounts payable/receivable, and expense management — accurately, securely, and on time.</p>
+            <p>Invoicing, accounts payable/receivable, and expense management — accurately, securely, and on time.</p>
             <a href="services.html#billing-outsourcing" class="read-more-btn cta-btn">Learn More</a>
           </div>
           <div class="service-card reveal reveal-delay-2">
             <div style="font-size:2.5rem;margin-bottom:0.9rem;">💻</div>
-            <h3>Tech Support Outsourcing</h3>
-            <p>Help desk, user support, remote troubleshooting, ticket management, and proactive tech solutions.</p>
+            <h3>Tech Support</h3>
+            <p>Help desk, remote troubleshooting, and ticket management — professional support without the in-house cost.</p>
             <a href="services.html#tech-support" class="read-more-btn cta-btn">Learn More</a>
           </div>
           <div class="service-card reveal reveal-delay-3">
             <div style="font-size:2.5rem;margin-bottom:0.9rem;">⚙️</div>
-            <h3>Process Improvement &amp; Automation</h3>
-            <p>We analyze, document, and automate your workflows so your business runs smarter and more efficiently.</p>
+            <h3>Process &amp; Automation</h3>
+            <p>We analyze, document, and automate your workflows so your business runs smarter every day.</p>
             <a href="services.html#process-improvement" class="read-more-btn cta-btn">Learn More</a>
           </div>
-          <div class="service-card reveal reveal-delay-1">
-            <div style="font-size:2.5rem;margin-bottom:0.9rem;">📄</div>
-            <h3>Data Entry &amp; Admin Support</h3>
-            <p>Accurate and confidential data entry, document processing, scheduling, and back-office support.</p>
-            <a href="services.html#data-entry" class="read-more-btn cta-btn">Learn More</a>
-          </div>
-          <div class="service-card reveal reveal-delay-2">
-            <div style="font-size:2.5rem;margin-bottom:0.9rem;">🖥️</div>
-            <h3>Help Desk &amp; Remote Support</h3>
-            <p>Responsive remote help desk and troubleshooting for your team and customers — fast, friendly, and reliable.</p>
-            <a href="services.html#help-desk" class="read-more-btn cta-btn">Learn More</a>
-          </div>
-          <div class="service-card reveal reveal-delay-3">
-            <div style="font-size:2.5rem;margin-bottom:0.9rem;">🔄</div>
-            <h3>Workflow Automation</h3>
-            <p>Automate routines and integrate your favourite business tools for maximum productivity and consistency.</p>
-            <a href="services.html#workflow-automation" class="read-more-btn cta-btn">Learn More</a>
-          </div>
+        </div>
+        <div style="text-align:center;margin-top:2.5rem;" class="reveal">
+          <a href="services.html" class="cta-btn" style="background:transparent;color:var(--brand);border:2px solid var(--brand);box-shadow:none;">View All Services →</a>
         </div>
       </div>
     </section>
 
     <!-- How It Works -->
-    <section style="padding: 5rem 0; background: var(--bg-page);">
+    <section style="padding:5rem 0;background:var(--bg-section);">
       <div class="container">
-        <h2 style="text-align: center; margin-bottom: 3rem;" class="reveal">How It Works</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-          <div class="process-step reveal reveal-delay-1"><div class="process-number">01</div><h4>Consult</h4><p>We meet to identify your operational bottlenecks and manual pain points.</p></div>
-          <div class="process-step reveal reveal-delay-2"><div class="process-number">02</div><h4>Integrate</h4><p>Our team syncs with your tools and documents the new streamlined workflow.</p></div>
-          <div class="process-step reveal reveal-delay-3"><div class="process-number">03</div><h4>Scale</h4><p>We handle the daily operations while you focus entirely on high-level growth.</p></div>
+        <h2 style="text-align:center;margin-bottom:3rem;" class="reveal">How It Works</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;">
+          <div class="process-step reveal reveal-delay-1">
+            <div class="process-number">01</div>
+            <h4>Consult</h4>
+            <p style="color:var(--muted);font-size:.95rem;">We meet to identify your operational bottlenecks and pain points.</p>
+          </div>
+          <div class="process-step reveal reveal-delay-2">
+            <div class="process-number">02</div>
+            <h4>Integrate</h4>
+            <p style="color:var(--muted);font-size:.95rem;">Our team syncs with your tools and documents the streamlined workflow.</p>
+          </div>
+          <div class="process-step reveal reveal-delay-3">
+            <div class="process-number">03</div>
+            <h4>Scale</h4>
+            <p style="color:var(--muted);font-size:.95rem;">We handle daily operations while you focus on high-level growth.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stat Bar -->
+    <section class="stat-bar">
+      <div class="container">
+        <div class="stat-grid">
+          <div class="stat-item reveal reveal-delay-1"><div class="stat-number">100%</div><div class="stat-label">On-Time Billing Rate</div></div>
+          <div class="stat-item reveal reveal-delay-2"><div class="stat-number">20+</div><div class="stat-label">Hours Saved Per Client / Week</div></div>
+          <div class="stat-item reveal reveal-delay-3"><div class="stat-number">4.8★</div><div class="stat-label">Average Client CSAT Score</div></div>
+          <div class="stat-item reveal reveal-delay-1"><div class="stat-number">3–5</div><div class="stat-label">Days to Full Onboarding</div></div>
         </div>
       </div>
     </section>
 
     <!-- Comparison Table -->
-    <section class="comparison-section">
+    <section style="padding:5rem 0;background:var(--bg-page);">
       <div class="container">
         <h2 style="text-align:center;" class="reveal">Tech Chimps vs. Hiring In-House</h2>
-        <p style="text-align:center;color:var(--muted);margin-top:-1rem;" class="reveal">See why more Toronto businesses are choosing to outsource.</p>
-        <div class="reveal" style="overflow-x:auto;">
+        <p style="text-align:center;color:var(--muted);margin-top:-1rem;" class="reveal">See why more Toronto businesses choose to outsource.</p>
+        <div class="reveal" style="overflow-x:auto;margin-top:2.5rem;">
           <table class="comparison-table">
             <thead>
               <tr>
@@ -185,70 +175,51 @@
               </tr>
             </thead>
             <tbody>
-              <tr><td>💰 Average annual cost</td><td>$65,000–$90,000+</td><td>Custom — pay for what you need</td></tr>
+              <tr><td>💰 Average annual cost</td><td>$65,000–$90,000+</td><td>Packages from $500/mo</td></tr>
               <tr><td>⏱ Time to get started</td><td>4–12 weeks (hiring + onboarding)</td><td><span class="check-yes">✓</span> Up and running in days</td></tr>
               <tr><td>📈 Scalable on demand</td><td><span class="check-no">✗</span> Headcount constraints</td><td><span class="check-yes">✓</span> Scale up or down instantly</td></tr>
-              <tr><td>🛡 Data security &amp; confidentiality</td><td><span class="check-partial">~ </span> Depends on staff</td><td><span class="check-yes">✓</span> Enforced protocols</td></tr>
+              <tr><td>🛡 Data security</td><td><span class="check-partial">~</span> Depends on staff</td><td><span class="check-yes">✓</span> Enforced protocols</td></tr>
               <tr><td>🔧 Multi-skill coverage</td><td><span class="check-no">✗</span> One person, one skill set</td><td><span class="check-yes">✓</span> Full team across disciplines</td></tr>
-              <tr><td>📊 Reporting &amp; accountability</td><td><span class="check-partial">~ </span> Manual, inconsistent</td><td><span class="check-yes">✓</span> Regular structured reports</td></tr>
-              <tr><td>🏖 Holiday / sick day coverage</td><td><span class="check-no">✗</span> Operations pause</td><td><span class="check-yes">✓</span> Continuous coverage</td></tr>
-              <tr><td>🤝 Dedicated account manager</td><td><span class="check-no">✗</span></td><td><span class="check-yes">✓</span> Growth plan &amp; above</td></tr>
+              <tr><td>🏖 Holiday &amp; sick day coverage</td><td><span class="check-no">✗</span> Operations pause</td><td><span class="check-yes">✓</span> Continuous coverage</td></tr>
             </tbody>
           </table>
         </div>
         <div style="text-align:center;margin-top:2rem;" class="reveal">
-          <a href="#contact" class="cta-btn">See What You'd Save</a>
+          <a href="pricing.html" class="cta-btn">See Pricing &amp; Packages →</a>
         </div>
       </div>
     </section>
 
-    <!-- Pricing -->
-    <section class="pricing-section" style="background:var(--bg-section);">
+    <!-- Testimonials -->
+    <section class="testimonials-section" style="background:var(--bg-section);">
       <div class="container">
-        <h2 style="text-align:center;" class="reveal">Simple, Transparent Pricing</h2>
-        <p style="text-align:center;color:var(--muted);margin-top:-1rem;" class="reveal">Flexible plans built around your business needs.</p>
-        <div class="pricing-grid">
-          <div class="pricing-card reveal reveal-delay-1">
-            <h3>Starter</h3>
-            <div class="price">Custom</div>
-            <p>For small teams looking to offload their first operational tasks.</p>
-            <ul class="pricing-features">
-              <li>Up to 20 hrs/month support</li>
-              <li>1 service area</li>
-              <li>Email support</li>
-              <li>Monthly reporting</li>
-            </ul>
-            <a href="#contact" class="cta-btn" style="width:100%;text-align:center;box-sizing:border-box;">Get a Quote</a>
+        <h2 style="text-align:center;" class="reveal">What Our Clients Say</h2>
+        <div class="testimonials-grid">
+          <div class="testimonial-item reveal reveal-delay-1">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">"Tech Chimps took our billing backlog from 3 weeks behind to zero in under a month. The cash flow difference was immediate and significant."</p>
+            <div class="testimonial-author-row">
+              <div class="testimonial-avatar">MR</div>
+              <div><div class="testimonial-name">Michael R.</div><div class="testimonial-role">Owner, Real Estate Firm · Toronto</div></div>
+            </div>
           </div>
-          <div class="pricing-card featured reveal reveal-delay-2">
-            <div class="pricing-badge">Most Popular</div>
-            <h3>Growth</h3>
-            <div class="price">Custom</div>
-            <p>For growing businesses ready to scale their operations.</p>
-            <ul class="pricing-features">
-              <li>Up to 60 hrs/month support</li>
-              <li>Up to 3 service areas</li>
-              <li>Priority email &amp; chat support</li>
-              <li>Weekly reporting</li>
-              <li>Dedicated account manager</li>
-            </ul>
-            <a href="#contact" class="cta-btn" style="width:100%;text-align:center;box-sizing:border-box;background:#fff;color:#4361ee;">Get a Quote</a>
+          <div class="testimonial-item reveal reveal-delay-2">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">"We were losing customers to slow overnight support. Tech Chimps set up a help desk that handles everything after hours. Our CSAT went from 3.2 to 4.8."</p>
+            <div class="testimonial-author-row">
+              <div class="testimonial-avatar">SL</div>
+              <div><div class="testimonial-name">Sarah L.</div><div class="testimonial-role">Founder, E-commerce Startup · Ontario</div></div>
+            </div>
           </div>
-          <div class="pricing-card reveal reveal-delay-3">
-            <h3>Enterprise</h3>
-            <div class="price">Custom</div>
-            <p>Full-scale outsourcing for established businesses.</p>
-            <ul class="pricing-features">
-              <li>Unlimited hours</li>
-              <li>All service areas</li>
-              <li>24/7 priority support</li>
-              <li>Real-time dashboards</li>
-              <li>SLA guarantee</li>
-            </ul>
-            <a href="#contact" class="cta-btn" style="width:100%;text-align:center;box-sizing:border-box;">Get a Quote</a>
+          <div class="testimonial-item reveal reveal-delay-3">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">"The automation they built saved us 20+ hours a week instantly. I wish we'd done this two years ago. Worth every dollar."</p>
+            <div class="testimonial-author-row">
+              <div class="testimonial-avatar">DK</div>
+              <div><div class="testimonial-name">David K.</div><div class="testimonial-role">Operations Director, Logistics Co. · GTA</div></div>
+            </div>
           </div>
         </div>
-        <p class="pricing-note">All plans are custom-scoped. <a href="#contact" style="color:var(--brand);">Contact us</a> to build a package that fits your exact needs.</p>
       </div>
     </section>
 
@@ -256,7 +227,7 @@
     <section class="book-cta-section">
       <div class="container" style="position:relative;z-index:1;">
         <h2 class="reveal">Not sure where to start?</h2>
-        <p class="reveal">Book a free 30-minute consultation. We'll map out your biggest operational wins — no commitment, no sales pitch.</p>
+        <p class="reveal">Book a free 30-minute consultation. We'll map out your biggest operational wins — no commitment required.</p>
         <a href="https://calendly.com/info-techchimps/30min" target="_blank" rel="noopener" class="calendly-btn reveal">
           📅 Book a Free 30-Min Consultation
         </a>
@@ -264,50 +235,6 @@
       </div>
     </section>
 
-    <!-- Contact Form -->
-    <section class="contact" id="contact" style="padding: 5rem 0; background: var(--bg-page);">
-      <div class="container">
-        <div class="contact-container">
-          <div class="contact-info reveal">
-            <h2 style="text-align: left; margin-bottom: 1.5rem;">Let's Get Started</h2>
-            <p style="margin-bottom: 2rem; font-size: 1.1rem; opacity: 0.8;">Ready to reclaim your time? Fill out the form and our operations experts will reach out within 24 hours to discuss your custom strategy.</p>
-            <div style="margin-bottom: 1.5rem; display: flex; gap: 1rem; align-items: center;">
-              <div style="font-size: 1.5rem;">📍</div>
-              <div><strong>Location:</strong> Toronto, Ontario, Canada</div>
-            </div>
-            <div style="margin-bottom: 1.5rem; display: flex; gap: 1rem; align-items: center;">
-              <div style="font-size: 1.5rem;">📧</div>
-              <div><strong>Email:</strong> <a href="mailto:info.techchimps@gmail.com" style="color: #4361ee; text-decoration: none;">info.techchimps@gmail.com</a></div>
-            </div>
-            <div style="display: flex; gap: 1rem; align-items: center;">
-              <div style="font-size: 1.5rem;">🕒</div>
-              <div><strong>Response Time:</strong> Within 1 Business Day</div>
-            </div>
-          </div>
-          <div class="contact-form-wrapper reveal reveal-delay-1">
-            <form id="contact-form" class="contact-form">
-              <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" placeholder="John Doe" required />
-              </div>
-              <div class="form-group">
-                <label for="business">Business Name</label>
-                <input type="text" id="business" name="business" placeholder="Company Inc." required />
-              </div>
-              <div class="form-group">
-                <label for="email">Work Email</label>
-                <input type="email" id="email" name="email" placeholder="john@company.com" required />
-              </div>
-              <div class="form-group">
-                <label for="message">How can we help?</label>
-                <textarea id="message" name="message" rows="4" placeholder="Tell us about your current bottlenecks..."></textarea>
-              </div>
-              <button type="submit" class="cta-btn" style="width: 100%;">Send My Strategy Plan</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="footer">
@@ -317,7 +244,7 @@
           <img src="LogoNew.png" alt="Tech Chimps" style="height:52px;" />
           <p>Toronto-based operations experts helping businesses scale by delegating the work that slows them down.</p>
           <div class="footer-socials">
-            <a href="https://www.linkedin.com/company/techchimps" target="_blank" rel="noopener" aria-label="LinkedIn">💼</a>
+            <a href="https://www.linkedin.com/company/tech-chimps" target="_blank" rel="noopener" aria-label="LinkedIn">💼</a>
             <a href="mailto:info.techchimps@gmail.com" aria-label="Email">📧</a>
           </div>
         </div>
@@ -334,8 +261,9 @@
           <h5>Company</h5>
           <a href="index.html">Home</a>
           <a href="about-us.html">About Us</a>
+          <a href="pricing.html">Pricing</a>
           <a href="blog.html">Resources</a>
-          <a href="#contact">Contact</a>
+          <a href="contact.html">Contact</a>
         </div>
         <div class="footer-col">
           <h5>Contact</h5>
@@ -355,41 +283,16 @@
   <script src="theme-switch.js"></script>
   <script src="carousel.js"></script>
   <script>
-    // Hamburger
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
     hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); navLinks.classList.toggle('open'); });
     navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { hamburger.classList.remove('open'); navLinks.classList.remove('open'); }));
-
-    // Scroll reveal
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-    }, { threshold: 0.1 });
+    const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }); }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // FAQ accordion
-    document.querySelectorAll('.faq-trigger').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const entry = btn.closest('.faq-entry');
-        const isOpen = entry.classList.contains('open');
-        document.querySelectorAll('.faq-entry').forEach(e => e.classList.remove('open'));
-        if (!isOpen) entry.classList.add('open');
-      });
-    });
-
-    // Cookie banner
     const cookieBanner = document.getElementById('cookieBanner');
-    if (!localStorage.getItem('tc_cookie_consent')) {
-      setTimeout(() => cookieBanner.classList.add('show'), 1200);
-    }
-    document.getElementById('cookieAccept').addEventListener('click', () => {
-      localStorage.setItem('tc_cookie_consent', 'accepted');
-      cookieBanner.classList.remove('show');
-    });
-    document.getElementById('cookieDecline').addEventListener('click', () => {
-      localStorage.setItem('tc_cookie_consent', 'declined');
-      cookieBanner.classList.remove('show');
-    });
+    if (!localStorage.getItem('tc_cookie_consent')) { setTimeout(() => cookieBanner.classList.add('show'), 1400); }
+    document.getElementById('cookieAccept').addEventListener('click', () => { localStorage.setItem('tc_cookie_consent', 'accepted'); cookieBanner.classList.remove('show'); });
+    document.getElementById('cookieDecline').addEventListener('click', () => { localStorage.setItem('tc_cookie_consent', 'declined'); cookieBanner.classList.remove('show'); });
   </script>
   <button id="scrollUpBtn" title="Go to top" aria-label="Go to top">
     <svg viewBox="0 0 24 24"><path d="M12 4c.28 0 .53.11.71.29l7 7a1 1 0 01-1.42 1.42L13 7.41V20a1 1 0 01-2 0V7.41l-5.29 5.3A1 1 0 014.29 11.3l7-7A1 1 0 0112 4z" fill="#fff"/></svg>
