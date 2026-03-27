@@ -19,7 +19,7 @@ This site showcases Tech Chimps' comprehensive outsourcing services for modern b
 ---
 
 **Contact:**  
-[asktechchimps@gmail.com](mailto:asktechchimps@gmail.com)
+[info.techchimps@gmail.com](mailto:info.techchimps@gmail.com)
 
 ---
 
