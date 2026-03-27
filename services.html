@@ -5,14 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Services | Tech Chimps</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="header">
     <div class="container">
       <nav class="navbar">
         <a href="index.html"><img src="LogoNew.png" alt="Tech Chimps Logo" style="height: 70px;" /></a>
-        <ul class="nav-links">
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="about-us.html">About Us</a></li>
@@ -23,7 +26,7 @@
         <div class="hero-content">
           <h1>Our Services</h1>
           <p>
-            Explore the full range of outsourcing, tech, and business process solutions we offer—so your business succeeds online and offline.
+            Explore the full range of outsourcing, tech, and business process solutions we offer — so your business succeeds online and offline.
           </p>
         </div>
       </div>
@@ -35,19 +38,19 @@
       <div class="container">
 
         <!-- Billing Outsourcing -->
-        <h2 id="billing-outsourcing">Billing Outsourcing</h2>
+        <h2 id="billing-outsourcing" class="reveal">Billing Outsourcing</h2>
         <div class="services-list">
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-1">
             <div style="font-size:2.5rem;margin-bottom:0.7rem;">🧾</div>
             <h3>End-to-End Billing Management</h3>
             <p>We manage your invoicing, accounts payable and receivable, and payment reconciliation to ensure all revenue flows are efficient and accurate.</p>
           </div>
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-2">
             <div style="font-size:2.5rem;margin-bottom:0.7rem;">💸</div>
-            <h3>Expense & Payment Handling</h3>
+            <h3>Expense &amp; Payment Handling</h3>
             <p>Track, process, and organize all expenses and payments for improved financial control.</p>
           </div>
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-3">
             <div style="font-size:2.5rem;margin-bottom:0.7rem;">📊</div>
             <h3>Custom Reporting</h3>
             <p>Generate tailored financial reports and insights for your business needs.</p>
@@ -58,19 +61,19 @@
         </div>
 
         <!-- Tech Support Outsourcing -->
-        <h2 id="tech-support" style="margin-top:3rem;">Tech Support Outsourcing</h2>
+        <h2 id="tech-support" style="margin-top:3rem;" class="reveal">Tech Support Outsourcing</h2>
         <div class="services-list">
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-1">
             <div style="font-size:2.5rem;margin-bottom:0.7rem;">💻</div>
             <h3>Remote Help Desk</h3>
-            <p>Instant tech support for your staff and customers—without hiring full-time IT.</p>
+            <p>Instant tech support for your staff and customers — without hiring full-time IT.</p>
           </div>
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-2">
             <div style="font-size:2.5rem;margin-bottom:0.7rem;">🛠</div>
-            <h3>User Support & Troubleshooting</h3>
+            <h3>User Support &amp; Troubleshooting</h3>
             <p>Proactive help for hardware, software, and network challenges.</p>
           </div>
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-3">
             <div style="font-size:2.5rem;margin-bottom:0.7rem;">🎫</div>
             <h3>Ticket Management</h3>
             <p>Efficient tracking and resolution of tech support cases.</p>
@@ -81,19 +84,19 @@
         </div>
 
         <!-- Process Improvement & Automation -->
-        <h2 id="process-improvement" style="margin-top:3rem;">Process Improvement & Automation</h2>
+        <h2 id="process-improvement" style="margin-top:3rem;" class="reveal">Process Improvement &amp; Automation</h2>
         <div class="services-list">
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-1">
             <div style="font-size:2.5rem;margin-bottom:0.7rem;">⚙️</div>
-            <h3>Workflow Analysis & Improvement</h3>
+            <h3>Workflow Analysis &amp; Improvement</h3>
             <p>We analyze and document your processes for greater efficiency and consistency.</p>
           </div>
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-2">
             <div style="font-size:2.5rem;margin-bottom:0.7rem;">🤖</div>
             <h3>Automation Solutions</h3>
             <p>Automate routine tasks and integrate popular business tools.</p>
           </div>
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-3">
             <div style="font-size:2.5rem;margin-bottom:0.7rem;">📈</div>
             <h3>Operational Excellence</h3>
             <p>Always finding ways to improve your business operations for stability and growth.</p>
@@ -104,21 +107,21 @@
         </div>
 
         <!-- Data Entry & Admin Support -->
-        <h2 id="data-entry" style="margin-top:3rem;">Data Entry & Admin Support</h2>
+        <h2 id="data-entry" style="margin-top:3rem;" class="reveal">Data Entry &amp; Admin Support</h2>
         <div class="services-list">
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-1">
             <div style="font-size:2.5rem;margin-bottom:0.7rem;">📄</div>
             <h3>Accurate Data Entry</h3>
             <p>Precise, confidential entry of data into your systems and files.</p>
           </div>
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-2">
             <div style="font-size:2.5rem;margin-bottom:0.7rem;">🗂️</div>
             <h3>Document Processing</h3>
             <p>Organize, process, and file business paperwork and digital docs.</p>
           </div>
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-3">
             <div style="font-size:2.5rem;margin-bottom:0.7rem;">📅</div>
-            <h3>Scheduling & Admin Help</h3>
+            <h3>Scheduling &amp; Admin Help</h3>
             <p>Calendar management, scheduling, and general admin support.</p>
           </div>
         </div>
@@ -127,14 +130,14 @@
         </div>
 
         <!-- Help Desk & Remote Support -->
-        <h2 id="help-desk" style="margin-top:3rem;">Help Desk & Remote Support</h2>
+        <h2 id="help-desk" style="margin-top:3rem;" class="reveal">Help Desk &amp; Remote Support</h2>
         <div class="services-list">
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-1">
             <div style="font-size:2.5rem;margin-bottom:0.7rem;">🖥️</div>
             <h3>Remote Troubleshooting</h3>
             <p>We fix technical issues quickly, minimizing downtime for your team.</p>
           </div>
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-2">
             <div style="font-size:2.5rem;margin-bottom:0.7rem;">👩‍💻</div>
             <h3>User Onboarding</h3>
             <p>Easy onboarding for new staff or remote users, with step-by-step support.</p>
@@ -145,17 +148,17 @@
         </div>
 
         <!-- Workflow Automation -->
-        <h2 id="workflow-automation" style="margin-top:3rem;">Workflow Automation</h2>
+        <h2 id="workflow-automation" style="margin-top:3rem;" class="reveal">Workflow Automation</h2>
         <div class="services-list">
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-1">
             <div style="font-size:2.5rem;margin-bottom:0.7rem;">🔄</div>
             <h3>Routine Automation</h3>
             <p>Streamline day-to-day business tasks to save time and reduce manual effort.</p>
           </div>
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-2">
             <div style="font-size:2.5rem;margin-bottom:0.7rem;">🔗</div>
             <h3>Business Tool Integration</h3>
-            <p>Connect your favorite apps for seamless information flow and improved productivity.</p>
+            <p>Connect your favourite apps for seamless information flow and improved productivity.</p>
           </div>
         </div>
         <div style="display:flex;justify-content:center;margin:2rem 0;">
@@ -168,20 +171,60 @@
 
   <footer class="footer">
     <div class="container">
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="about-us.html">About Us</a>
-        <a href="index.html#contact">Contact</a>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="LogoNew.png" alt="Tech Chimps" style="height:52px;" />
+          <p>Toronto-based operations experts helping businesses scale by delegating the work that slows them down.</p>
+          <div class="footer-socials">
+            <a href="https://www.linkedin.com/company/techchimps" target="_blank" rel="noopener" aria-label="LinkedIn">💼</a>
+            <a href="/cdn-cgi/l/email-protection#6e07000801401a0b0d060d0607031e1d2e09030f0702400d0103" aria-label="Email">📧</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="#billing-outsourcing">Billing Outsourcing</a>
+          <a href="#tech-support">Tech Support</a>
+          <a href="#process-improvement">Process Automation</a>
+          <a href="#data-entry">Data Entry</a>
+          <a href="#help-desk">Help Desk</a>
+          <a href="#workflow-automation">Workflow Automation</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="index.html">Home</a>
+          <a href="about-us.html">About Us</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="/cdn-cgi/l/email-protection#97fef9f1f8b9e3f2f4fff4fffefae7e4d7f0faf6fefbb9f4f8fa"><span class="__cf_email__" data-cfemail="c8a1a6aea7e6bcadaba0aba0a1a5b8bb88afa5a9a1a4e6aba7a5">[email&#160;protected]</span></a>
+          <a href="#">Toronto, Ontario, Canada</a>
+          <a href="index.html#contact" class="cta-btn" style="margin-top:0.8rem;font-size:0.85rem;padding:0.5em 1.1em;display:inline-block;">Get a Quote</a>
+        </div>
       </div>
-      <p>&copy; 2026 Tech Chimps. All rights reserved.</p>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Tech Chimps. All rights reserved.</span>
+        <span>Toronto, Ontario, Canada</span>
+      </div>
     </div>
   </footer>
-  <script src="theme-switch.js"></script>
-  <button id="scrollUpBtn" title="Go to top" aria-label="Go to top">
-    <svg viewBox="0 0 24 24">
-      <path d="M12 4c.28 0 .53.11.71.29l7 7a1 1 0 01-1.42 1.42L13 7.41V20a1 1 0 01-2 0V7.41l-5.29 5.3A1 1 0 014.29 11.3l7-7A1 1 0 0112 4z" fill="#fff"/>
-    </svg>
-  </button>
-</body>
-</html>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="theme-switch.js"></script>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    });
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => observer.observe(el));

@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us | Tech Chimps - Operations Experts in Toronto</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    /* Visual Polish for Process Numbers */
     .process-step { position: relative; padding: 2rem; text-align: center; }
     .process-number { font-size: 3rem; font-weight: 800; color: #4361ee; opacity: 0.2; position: absolute; top: 0; left: 50%; transform: translateX(-50%); }
   </style>
@@ -17,7 +16,10 @@
     <div class="container">
       <nav class="navbar">
         <a href="index.html"><img src="LogoNew.png" alt="Tech Chimps Logo" style="height: 80px;" /></a>
-        <ul class="nav-links">
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="about-us.html">About Us</a></li>
@@ -38,29 +40,29 @@
   <main>
     <section class="about-section" style="padding: 5rem 0 2rem;">
       <div class="container">
-        <div style="max-width: 800px; margin: 0 auto; text-align: center; line-height: 1.6;">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center; line-height: 1.6;" class="reveal">
           <h2>Our Mission</h2>
           <p>
-            At Tech Chimps, our mission is to provide reliable, tech-driven outsourcing solutions that allow entrepreneurs and teams to focus on what they do best: growing their business. 
-            We believe that operational excellence shouldn't be a luxury, but a standard for every growing company in Canada and USA.
+            At Tech Chimps, our mission is to provide reliable, tech-driven outsourcing solutions that allow entrepreneurs and teams to focus on what they do best: growing their business.
+            We believe that operational excellence shouldn't be a luxury — it should be a standard for every growing company in Canada and the USA.
           </p>
         </div>
 
         <div class="why-list" style="margin-top: 4rem;">
-          <div class="why-card">
+          <div class="why-card reveal reveal-delay-1">
             <div style="font-size:3.5rem; margin-bottom:1rem; text-align:center;">🤝</div>
             <h4>Proven Partnership</h4>
             <p>We don't just complete tasks; we integrate with your team to understand your unique business needs and goals.</p>
           </div>
-          <div class="why-card">
+          <div class="why-card reveal reveal-delay-2">
             <div style="font-size:2.5rem;margin-bottom:1rem;">✅</div>
             <h4 style="margin: 0.5rem 0;">Consistent Professional Support</h4>
             <p>Our team provides reliable, high-quality support during business hours, ensuring your customers and employees get the consistency they expect.</p>
           </div>
-          <div class="why-card">
+          <div class="why-card reveal reveal-delay-3">
             <div style="font-size:3.5rem; margin-bottom:1rem; text-align:center;">🎧</div>
             <h4>Always Available</h4>
-            <p>We provide the ongoing reliability your customers and employees expect.</p>
+            <p>We provide the ongoing reliability your customers and employees expect — whenever you need us most.</p>
           </div>
         </div>
       </div>
@@ -68,58 +70,54 @@
 
     <section style="background: var(--card-bg); padding: 5rem 0; border-top: 1px solid rgba(0,0,0,0.05); border-bottom: 1px solid rgba(0,0,0,0.05);">
       <div class="container">
-        <h2 style="text-align:center; margin-bottom: 3rem;">How It Works</h2>
+        <h2 style="text-align:center; margin-bottom: 3rem;" class="reveal">How It Works</h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-          
-          <div class="process-step">
+          <div class="process-step reveal reveal-delay-1">
             <div class="process-number">01</div>
             <h4>Consult</h4>
             <p style="font-size: 0.95rem;">We meet to identify your operational bottlenecks and manual pain points.</p>
           </div>
-
-          <div class="process-step">
+          <div class="process-step reveal reveal-delay-2">
             <div class="process-number">02</div>
             <h4>Integrate</h4>
             <p style="font-size: 0.95rem;">Our team syncs with your tools and documents the new streamlined workflow.</p>
           </div>
-
-          <div class="process-step">
+          <div class="process-step reveal reveal-delay-3">
             <div class="process-number">03</div>
             <h4>Scale</h4>
             <p style="font-size: 0.95rem;">We handle the daily operations while you focus entirely on high-level growth.</p>
           </div>
-
         </div>
       </div>
     </section>
 
     <section class="success-stories" style="padding: 5rem 0; background: var(--bg-color);">
       <div class="container">
-        <h2 style="text-align:center; margin-bottom: 3rem;">Success Stories</h2>
+        <h2 style="text-align:center; margin-bottom: 3rem;" class="reveal">Success Stories</h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
           
-          <div style="background: var(--card-bg); padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 5px solid #4361ee;">
+          <div style="background: var(--card-bg); padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 5px solid #4361ee;" class="reveal reveal-delay-1">
             <span style="font-size: 0.8rem; font-weight: bold; color: #4361ee; text-transform: uppercase;">Real Estate Firm</span>
             <h4 style="margin: 0.5rem 0;">Eliminating Billing Delays</h4>
             <p style="font-size: 0.9rem; font-style: italic; margin-bottom: 1rem; color: #666;">"Our invoicing was 3 weeks behind, affecting our cash flow."</p>
             <p style="font-size: 0.95rem;"><strong>The Solution:</strong> Tech Chimps took over the accounts receivable cycle and implemented automated reminders.</p>
-            <p style="font-size: 0.95rem; margin-top: 1rem; color: #2ec4b6; font-weight: bold;">Result: 100% on-time billing & 25% faster collections.</p>
+            <p style="font-size: 0.95rem; margin-top: 1rem; color: #2ec4b6; font-weight: bold;">Result: 100% on-time billing &amp; 25% faster collections.</p>
           </div>
 
-          <div style="background: var(--card-bg); padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 5px solid #4361ee;">
+          <div style="background: var(--card-bg); padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 5px solid #4361ee;" class="reveal reveal-delay-2">
             <span style="font-size: 0.8rem; font-weight: bold; color: #4361ee; text-transform: uppercase;">E-commerce Startup</span>
             <h4 style="margin: 0.5rem 0;">24/7 Customer Peace of Mind</h4>
             <p style="font-size: 0.9rem; font-style: italic; margin-bottom: 1rem; color: #666;">"We were losing customers because our tech support ended at 5 PM."</p>
             <p style="font-size: 0.95rem;"><strong>The Solution:</strong> We deployed a remote help desk team to cover nights and weekends, handling all ticket management.</p>
-            <p style="font-size: 0.95rem; margin-top: 1rem; color: #2ec4b6; font-weight: bold;">Result: 4.8/5 CSAT score & zero missed overnight tickets.</p>
+            <p style="font-size: 0.95rem; margin-top: 1rem; color: #2ec4b6; font-weight: bold;">Result: 4.8/5 CSAT score &amp; zero missed overnight tickets.</p>
           </div>
 
-          <div style="background: var(--card-bg); padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 5px solid #4361ee;">
+          <div style="background: var(--card-bg); padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 5px solid #4361ee;" class="reveal reveal-delay-3">
             <span style="font-size: 0.8rem; font-weight: bold; color: #4361ee; text-transform: uppercase;">Logistics Company</span>
             <h4 style="margin: 0.5rem 0;">Automating Data Entry</h4>
             <p style="font-size: 0.9rem; font-style: italic; margin-bottom: 1rem; color: #666;">"Staff spent 4 hours a day manually copying data from emails to CRM."</p>
             <p style="font-size: 0.95rem;"><strong>The Solution:</strong> Tech Chimps built a custom automation that parses emails and populates the database instantly.</p>
-            <p style="font-size: 0.95rem; margin-top: 1rem; color: #2ec4b6; font-weight: bold;">Result: Saved 20+ hours per week & eliminated human error.</p>
+            <p style="font-size: 0.95rem; margin-top: 1rem; color: #2ec4b6; font-weight: bold;">Result: Saved 20+ hours per week &amp; eliminated human error.</p>
           </div>
 
         </div>
@@ -128,23 +126,23 @@
 
     <section class="values-section" style="padding: 5rem 0;">
       <div class="container">
-        <h2 style="text-align:center; margin-bottom: 3rem;">Our Core Values</h2>
+        <h2 style="text-align:center; margin-bottom: 3rem;" class="reveal">Our Core Values</h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem;">
-          <div style="display: flex; gap: 1rem;">
+          <div style="display: flex; gap: 1rem;" class="reveal reveal-delay-1">
             <div style="font-size: 1.5rem;">🛡️</div>
             <div>
-              <h4 style="margin-bottom: 0.5rem;">Integrity & Security</h4>
+              <h4 style="margin-bottom: 0.5rem;">Integrity &amp; Security</h4>
               <p style="font-size: 0.9rem;">We handle your sensitive billing data and internal processes with the highest standards of confidentiality.</p>
             </div>
           </div>
-          <div style="display: flex; gap: 1rem;">
+          <div style="display: flex; gap: 1rem;" class="reveal reveal-delay-2">
             <div style="font-size: 1.5rem;">💡</div>
             <div>
               <h4 style="margin-bottom: 0.5rem;">Tech Innovation</h4>
               <p style="font-size: 0.9rem;">We don't just do the work; we use the latest automation tools to find faster, better ways to deliver results.</p>
             </div>
           </div>
-          <div style="display: flex; gap: 1rem;">
+          <div style="display: flex; gap: 1rem;" class="reveal reveal-delay-3">
             <div style="font-size: 1.5rem;">🎯</div>
             <div>
               <h4 style="margin-bottom: 0.5rem;">Unmatched Accuracy</h4>
@@ -157,33 +155,70 @@
 
     <section class="cta-section" style="background: #4361ee; color: #fff; padding: 5rem 0; text-align: center;">
       <div class="container">
-        <h2 style="color: #fff;">Ready to delegate?</h2>
-        <p style="margin-bottom: 2rem; opacity: 0.9; font-size: 1.1rem;">Join the Toronto businesses that trust Tech Chimps with their daily operations.</p>
-        <div style="margin-bottom: 2rem;">
-          <p>📧 <strong>Email us:</strong> <a href="mailto:techchimps@outlook.com" style="color: #fff; text-decoration: underline;">techchimps@outlook.com</a></p>
+        <h2 style="color: #fff;" class="reveal">Ready to delegate?</h2>
+        <p style="margin-bottom: 2rem; opacity: 0.9; font-size: 1.1rem;" class="reveal">Join the Toronto businesses that trust Tech Chimps with their daily operations.</p>
+        <div style="margin-bottom: 2rem;" class="reveal">
+          <p>📧 <strong>Email us:</strong> <a href="/cdn-cgi/l/email-protection#21484f474e0f554442494249484c515261464c40484d0f424e4c" style="color: #fff; text-decoration: underline;"><span class="__cf_email__" data-cfemail="b2dbdcd4dd9cc6d7d1dad1dadbdfc2c1f2d5dfd3dbde9cd1dddf">[email&#160;protected]</span></a></p>
         </div>
-        <a href="index.html#contact" class="cta-btn" style="background: #fff; color: #4361ee; padding: 1rem 2rem; font-size: 1.1rem;">Get Started Today</a>
+        <a href="index.html#contact" class="cta-btn reveal" style="background: #fff; color: #4361ee; padding: 1rem 2rem; font-size: 1.1rem;">Get Started Today</a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container">
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="about-us.html">About Us</a>
-        <a href="index.html#contact">Contact</a>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="LogoNew.png" alt="Tech Chimps" style="height:52px;" />
+          <p>Toronto-based operations experts helping businesses scale by delegating the work that slows them down.</p>
+          <div class="footer-socials">
+            <a href="https://www.linkedin.com/company/techchimps" target="_blank" rel="noopener" aria-label="LinkedIn">💼</a>
+            <a href="/cdn-cgi/l/email-protection#f0999e969fde849593989398999d8083b0979d91999cde939f9d" aria-label="Email">📧</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="services.html#billing-outsourcing">Billing Outsourcing</a>
+          <a href="services.html#tech-support">Tech Support</a>
+          <a href="services.html#process-improvement">Process Automation</a>
+          <a href="services.html#data-entry">Data Entry</a>
+          <a href="services.html#help-desk">Help Desk</a>
+          <a href="services.html#workflow-automation">Workflow Automation</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="index.html">Home</a>
+          <a href="about-us.html">About Us</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="/cdn-cgi/l/email-protection#d8b1b6beb7f6acbdbbb0bbb0b1b5a8ab98bfb5b9b1b4f6bbb7b5"><span class="__cf_email__" data-cfemail="d7beb9b1b8f9a3b2b4bfb4bfbebaa7a497b0bab6bebbf9b4b8ba">[email&#160;protected]</span></a>
+          <a href="#">Toronto, Ontario, Canada</a>
+          <a href="index.html#contact" class="cta-btn" style="margin-top:0.8rem;font-size:0.85rem;padding:0.5em 1.1em;display:inline-block;">Get a Quote</a>
+        </div>
       </div>
-      <p>&copy; 2026 Tech Chimps. All rights reserved.</p>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Tech Chimps. All rights reserved.</span>
+        <span>Toronto, Ontario, Canada</span>
+      </div>
     </div>
   </footer>
 
-  <script src="theme-switch.js"></script>
-  <button id="scrollUpBtn" title="Go to top" aria-label="Go to top">
-    <svg viewBox="0 0 24 24">
-      <path d="M12 4c.28 0 .53.11.71.29l7 7a1 1 0 01-1.42 1.42L13 7.41V20a1 1 0 01-2 0V7.41l-5.29 5.3A1 1 0 014.29 11.3l7-7A1 1 0 0112 4z" fill="#fff"/>
-    </svg>
-  </button>
-</body>
-</html>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="theme-switch.js"></script>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    });
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.ta
