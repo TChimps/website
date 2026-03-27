@@ -151,7 +151,8 @@
               <label for="message">How can we help? *</label>
               <textarea id="message" name="message" rows="5" placeholder="Tell us about your current bottlenecks, what you're trying to solve, or any context that helps us prepare..." required></textarea>
             </div>
-            <button type="submit" class="cta-btn" style="width:100%;font-size:1rem;padding:0.9em;">Send My Message →</button>
+            <button type="submit" id="submit-btn" class="cta-btn" style="width:100%;font-size:1rem;padding:0.9em;">Send My Message →</button>
+			<p id="status-message"></p>
             <p style="font-size:0.78rem;color:var(--muted);text-align:center;margin-top:1rem;">We respond within 1 business day. Your data is kept private — see our <a href="privacy.html" style="color:var(--brand);">Privacy Policy</a>.</p>
           </form>
         </div>
@@ -209,6 +210,30 @@
     const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }); }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
+  <script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxx_i73bQME-T7RSxinvni5OB5kAmZzzB47VPvnuGCFxk_eNV7dX4OanzZhsMzLLHO_Pg/exec'; 
+  const form = document.getElementById('contact-form');
+  const statusMsg = document.getElementById('status-message');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault(); 
+    statusMsg.textContent = "Sending..."; 
+
+    fetch(scriptURL, { 
+      method: 'POST', 
+      body: new FormData(form) 
+    })
+    .then(response => {
+      statusMsg.textContent = "Success! Your message was sent.";
+      form.reset();
+    })
+    .catch(error => {
+      statusMsg.textContent = "Error! Please try again later.";
+      console.error('Error!', error.message);
+    });
+  });
+</script>
+
   <button id="scrollUpBtn" title="Go to top" aria-label="Go to top">
     <svg viewBox="0 0 24 24"><path d="M12 4c.28 0 .53.11.71.29l7 7a1 1 0 01-1.42 1.42L13 7.41V20a1 1 0 01-2 0V7.41l-5.29 5.3A1 1 0 014.29 11.3l7-7A1 1 0 0112 4z" fill="#fff"/></svg>
   </button>
