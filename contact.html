@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Tech Chimps</title>
+  <link rel="icon" href="Rounded_TechChimp_Logo.png" type="image/png" />
+  <meta name="description" content="Get in touch with Tech Chimps. Book a free consultation or send us a message — we respond within 1 business day." />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Contact Modal -->
+  <div class="modal-overlay" id="mailtoModal">
+    <div class="modal-box">
+      <div style="font-size:2.5rem;margin-bottom:0.5rem;">✅</div>
+      <h3>Message Sent!</h3>
+      <p>Your email client should have opened with your message ready. We'll get back to you within 1 business day.</p>
+      <button class="cta-btn" id="modalOk" style="width:100%;">Done</button>
+    </div>
+  </div>
+
+  <div class="geo-banner">
+    <p>🌎 Proudly serving businesses across Canada &amp; the United States <span>— Toronto HQ, global reach</span></p>
+  </div>
+
+  <header class="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html"><img src="LogoNew.png" alt="Tech Chimps Logo" width="160" height="80" style="height:80px;width:auto;" /></a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="blog.html">Resources</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="hero">
+        <div class="hero-content">
+          <h1>Let's Talk</h1>
+          <p>Tell us about your business and we'll put together a custom operations strategy — no commitment, no fluff.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding:5rem 0;background:var(--bg-page);">
+    <div class="container">
+      <div class="contact-page-grid">
+
+        <!-- Left: Info + Calendly -->
+        <div>
+          <div class="contact-info-card reveal">
+            <h3>Get in Touch</h3>
+            <div class="contact-detail">
+              <div class="contact-detail-icon">📍</div>
+              <div class="contact-detail-text">
+                <strong>Location</strong>
+                <span>Toronto, Ontario, Canada</span>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-icon">📧</div>
+              <div class="contact-detail-text">
+                <strong>Email</strong>
+                <a href="/cdn-cgi/l/email-protection#2c45424a430258494f444f4445415c5f6c4b414d4540024f4341"><span class="__cf_email__" data-cfemail="88e1e6eee7a6fcedebe0ebe0e1e5f8fbc8efe5e9e1e4a6ebe7e5">[email&#160;protected]</span></a>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-icon">💼</div>
+              <div class="contact-detail-text">
+                <strong>LinkedIn</strong>
+                <a href="https://www.linkedin.com/company/tech-chimps" target="_blank" rel="noopener">linkedin.com/company/tech-chimps</a>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-icon">🕒</div>
+              <div class="contact-detail-text">
+                <strong>Response Time</strong>
+                <span>Within 1 Business Day</span>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-icon">🗓</div>
+              <div class="contact-detail-text">
+                <strong>Business Hours</strong>
+                <span>Monday – Friday, 9am – 6pm ET</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-calendly-box reveal" style="margin-top:1.5rem;">
+            <div style="font-size:2rem;margin-bottom:0.5rem;">📅</div>
+            <h4 style="color:#fff;margin:0 0 0.5rem;">Prefer to talk first?</h4>
+            <p>Book a free 30-minute consultation and we'll map out your biggest operational wins together.</p>
+            <a href="https://calendly.com/info-techchimps/30min" target="_blank" rel="noopener" class="cta-btn" style="background:#fff;color:#4361ee;width:100%;box-sizing:border-box;text-align:center;display:block;">Book a Free Consultation</a>
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="contact-form-card reveal reveal-delay-1">
+          <h3>Send Us a Message</h3>
+          <form id="contact-form">
+            <div class="cf-row">
+              <div class="cf-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+              </div>
+              <div class="cf-group">
+                <label for="business">Business Name *</label>
+                <input type="text" id="business" name="business" placeholder="Acme Corp" required />
+              </div>
+            </div>
+            <div class="cf-row">
+              <div class="cf-group">
+                <label for="email">Work Email *</label>
+                <input type="email" id="email" name="email" placeholder="jane@acme.com" required />
+              </div>
+              <div class="cf-group">
+                <label for="phone">Phone (optional)</label>
+                <input type="tel" id="phone" name="phone" placeholder="+1 (416) 000-0000" />
+              </div>
+            </div>
+            <div class="cf-group">
+              <label for="service">Service of Interest</label>
+              <select id="service" name="service">
+                <option value="">— Select a service —</option>
+                <option>Billing Outsourcing</option>
+                <option>Tech Support Outsourcing</option>
+                <option>Process Improvement &amp; Automation</option>
+                <option>Data Entry &amp; Admin Support</option>
+                <option>Help Desk &amp; Remote Support</option>
+                <option>Workflow Automation</option>
+                <option>Multiple / Not Sure</option>
+              </select>
+            </div>
+            <div class="cf-group">
+              <label for="size">Company Size</label>
+              <select id="size" name="size">
+                <option value="">— Select —</option>
+                <option>1–10 employees</option>
+                <option>11–50 employees</option>
+                <option>51–200 employees</option>
+                <option>200+ employees</option>
+              </select>
+            </div>
+            <div class="cf-group">
+              <label for="message">How can we help? *</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell us about your current bottlenecks, what you're trying to solve, or any context that helps us prepare..." required></textarea>
+            </div>
+            <button type="submit" id="submit-btn" class="cta-btn" style="width:100%;font-size:1rem;padding:0.9em;">Send My Message →</button>
+			<p id="status-message"></p>
+            <p style="font-size:0.78rem;color:var(--muted);text-align:center;margin-top:1rem;">We respond within 1 business day. Your data is kept private — see our <a href="privacy.html" style="color:var(--brand);">Privacy Policy</a>.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="LogoNew.png" alt="Tech Chimps" width="104" height="52" style="height:52px;width:auto;" />
+          <p>Toronto-based operations experts helping businesses scale by delegating the work that slows them down.</p>
+          <div class="footer-socials">
+            <a href="https://www.linkedin.com/company/tech-chimps" target="_blank" rel="noopener" aria-label="LinkedIn">💼</a>
+            <a href="/cdn-cgi/l/email-protection#1a73747c75346e7f7972797273776a695a7d777b737634797577" aria-label="Email">📧</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="services.html#billing-outsourcing">Billing Outsourcing</a>
+          <a href="services.html#tech-support">Tech Support</a>
+          <a href="services.html#process-improvement">Process Automation</a>
+          <a href="services.html#data-entry">Data Entry</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="index.html">Home</a>
+          <a href="about-us.html">About Us</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="blog.html">Resources</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="/cdn-cgi/l/email-protection#10797e767f3e647573787378797d606350777d71797c3e737f7d"><span class="__cf_email__" data-cfemail="7e17101811500a1b1d161d1617130e0d3e19131f1712501d1113">[email&#160;protected]</span></a>
+          <a href="https://www.linkedin.com/company/tech-chimps" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://calendly.com/info-techchimps/30min" target="_blank" rel="noopener" class="cta-btn" style="margin-top:0.8rem;font-size:0.85rem;padding:0.5em 1.1em;display:inline-block;">📅 Book a Call</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Tech Chimps. All rights reserved. · <a href="privacy.html" style="color:rgba(255,255,255,0.5);text-decoration:none;">Privacy Policy</a></span>
+        <span>Toronto, Ontario, Canada</span>
+      </div>
+    </div>
+  </footer>
+
+  <!--script src="mailto.js"></script> -->
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="theme-switch.js"></script>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); navLinks.classList.toggle('open'); });
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { hamburger.classList.remove('open'); navLinks.classList.remove('open'); }));
+    const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }); }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+  <script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxx_i73bQME-T7RSxinvni5OB5kAmZzzB47VPvnuGCFxk_eNV7dX4OanzZhsMzLLHO_Pg/exec'; 
+  const form = document.getElementById('contact-form');
+  const statusMsg = document.getElementById('status-message');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault(); 
+    statusMsg.textContent = "Sending..."; 
+
+    fetch(scriptURL, { 
+      method: 'POST', 
+      body: new FormData(form) 
+    })
+    .then(response => {
+      statusMsg.textContent = "Success! Your message was sent.";
+      form.re      });
+    });
+  </script>
+  <button id="scrollUpBtn" title="Go to top" aria-label="Go to top">
+    <svg viewBox="0 0 24 24"><path d="M12 4c.28 0 .53.11.71.29l7 7a1 1 0 01-1.42 1.42L13 7.41V20a1 1 0 01-2 0V7.41l-5.29 5.3A1 1 0 014.29 11.3l7-7A1 1 0 0112 4z" fill="#fff"/></svg>
+  </button>
+</body>
+</html>

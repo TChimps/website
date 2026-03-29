@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tech Chimps | Grow Your Business by Delegating Operations</title>
+  <meta name="description" content="Toronto-based outsourcing experts handling billing, tech support, and business process automation for Canadian and US businesses." />
+  <meta name="keywords" content="outsourcing Toronto, billing outsourcing, tech support outsourcing, business process automation, operations support Canada" />
+  <link rel="icon" href="Rounded_TechChimp_Logo.png" type="image/png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .trust-bar { padding: 2rem 0; background: var(--bg-section); text-align: center; border-bottom: 1px solid var(--border); }
+    .trust-logos { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; align-items: center; opacity: 0.65; margin-top: 1rem; }
+    .trust-logos span { font-weight: 700; font-size: 1.1rem; color: var(--text); }
+    .process-step { position: relative; padding: 2.5rem 1.5rem 1.5rem; text-align: center; }
+    .process-number { font-size: 3rem; font-weight: 800; color: var(--brand); opacity: 0.15; position: absolute; top: 0; left: 50%; transform: translateX(-50%); line-height: 1; }
+  </style>
+</head>
+<body>
+
+  <div class="cookie-banner" id="cookieBanner">
+    <p>🍪 We use cookies to improve your experience. By continuing, you agree to our <a href="privacy.html">Privacy Policy</a>.</p>
+    <div class="cookie-actions">
+      <button class="cookie-decline" id="cookieDecline">Decline</button>
+      <button class="cookie-accept" id="cookieAccept">Accept</button>
+    </div>
+  </div>
+
+  <div class="geo-banner">
+    <p>🌎 Proudly serving businesses across Canada &amp; the United States <span>— Toronto HQ, global reach</span></p>
+  </div>
+
+  <header class="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html"><img src="LogoNew.png" alt="Tech Chimps Logo" width="160" height="80" style="height:80px;width:auto;" /></a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="blog.html">Resources</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Static Split Hero replaces carousel -->
+      <div class="hero-split">
+        <div class="hero-split-left">
+          <h1>Grow Your Business by <span>Delegating Operations</span></h1>
+          <p>Tech Chimps handles your billing, tech support, and back-office processes — so your team can focus on what actually grows your business.</p>
+          <div class="hero-btn-group">
+            <a href="contact.html" class="cta-btn">Get Started →</a>
+            <a href="services.html" class="hero-btn-secondary">See Our Services</a>
+          </div>
+        </div>
+        <div class="hero-split-right">
+          <div class="hero-stat-card">
+            <div class="hero-stat-icon">🕐</div>
+            <div><div class="hero-stat-num">20+ hrs</div><div class="hero-stat-label">Saved per client / week</div></div>
+          </div>
+          <div class="hero-stat-card">
+            <div class="hero-stat-icon">🧾</div>
+            <div><div class="hero-stat-num">100%</div><div class="hero-stat-label">On-time billing rate</div></div>
+          </div>
+          <div class="hero-stat-card">
+            <div class="hero-stat-icon">⚡</div>
+            <div><div class="hero-stat-num">3–5 days</div><div class="hero-stat-label">To full onboarding</div></div>
+          </div>
+          <div class="hero-stat-card">
+            <div class="hero-stat-icon">💰</div>
+            <div><div class="hero-stat-num">From $500/mo</div><div class="hero-stat-label">Flexible packages</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="trust-bar">
+    <div class="container">
+      <p style="font-size:0.8rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;opacity:0.5;">Expertise in the tools you use</p>
+      <div class="trust-logos">
+        <span>SAP S/4 HANA</span>
+        <span>Microsoft Dynamics NAV</span>
+        <span>Microsoft Excel</span>
+        <span>Power Automate</span>
+        <span>Google Workspace</span>
+      </div>
+    </div>
+  </section>
+
+  <main>
+
+    <section class="services" id="services" style="padding:5rem 0;">
+      <div class="container">
+        <h2 class="reveal">What We Do</h2>
+        <p style="text-align:center;color:var(--muted);margin-top:-1rem;margin-bottom:2.5rem;" class="reveal">Outsourced operations so you can focus on what matters.</p>
+        <div class="services-list">
+          <div class="service-card reveal reveal-delay-1">
+            <div style="font-size:2.5rem;margin-bottom:0.9rem;">🧾</div>
+            <h3>Billing Outsourcing</h3>
+            <p>Invoicing, accounts payable/receivable, and expense management — accurately, securely, and on time.</p>
+            <a href="services.html#billing-outsourcing" class="read-more-btn cta-btn">Learn More</a>
+          </div>
+          <div class="service-card reveal reveal-delay-2">
+            <div style="font-size:2.5rem;margin-bottom:0.9rem;">💻</div>
+            <h3>Tech Support</h3>
+            <p>Help desk, remote troubleshooting, and ticket management — professional support without the in-house cost.</p>
+            <a href="services.html#tech-support" class="read-more-btn cta-btn">Learn More</a>
+          </div>
+          <div class="service-card reveal reveal-delay-3">
+            <div style="font-size:2.5rem;margin-bottom:0.9rem;">⚙️</div>
+            <h3>Process &amp; Automation</h3>
+            <p>We analyze, document, and automate your workflows so your business runs smarter every day.</p>
+            <a href="services.html#process-improvement" class="read-more-btn cta-btn">Learn More</a>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:2.5rem;" class="reveal">
+          <a href="services.html" class="cta-btn" style="background:transparent;color:var(--brand);border:2px solid var(--brand);box-shadow:none;">View All Services →</a>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:5rem 0;background:var(--bg-section);">
+      <div class="container">
+        <h2 style="text-align:center;margin-bottom:3rem;" class="reveal">How It Works</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;">
+          <div class="process-step reveal reveal-delay-1"><div class="process-number">01</div><h4>Consult</h4><p style="color:var(--muted);font-size:.95rem;">We meet to identify your operational bottlenecks and pain points.</p></div>
+          <div class="process-step reveal reveal-delay-2"><div class="process-number">02</div><h4>Integrate</h4><p style="color:var(--muted);font-size:.95rem;">Our team syncs with your tools and documents the streamlined workflow.</p></div>
+          <div class="process-step reveal reveal-delay-3"><div class="process-number">03</div><h4>Scale</h4><p style="color:var(--muted);font-size:.95rem;">We handle daily operations while you focus on high-level growth.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:5rem 0;background:var(--bg-page);">
+      <div class="container">
+        <h2 style="text-align:center;" class="reveal">Tech Chimps vs. Hiring In-House</h2>
+        <p style="text-align:center;color:var(--muted);margin-top:-1rem;" class="reveal">See why more Toronto businesses choose to outsource.</p>
+        <div class="reveal" style="overflow-x:auto;margin-top:2.5rem;">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th class="col-hiring">Hiring In-House</th>
+                <th class="col-tc">Tech Chimps</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>💰 Average annual cost</td><td>$65,000–$90,000+</td><td>Packages from $500/mo</td></tr>
+              <tr><td>⏱ Time to get started</td><td>4–12 weeks (hiring + onboarding)</td><td><span class="check-yes">✓</span> Up and running in days</td></tr>
+              <tr><td>📈 Scalable on demand</td><td><span class="check-no">✗</span> Headcount constraints</td><td><span class="check-yes">✓</span> Scale up or down instantly</td></tr>
+              <tr><td>🛡 Data security</td><td><span class="check-partial">~</span> Depends on staff</td><td><span class="check-yes">✓</span> Enforced protocols</td></tr>
+              <tr><td>🔧 Multi-skill coverage</td><td><span class="check-no">✗</span> One person, one skill set</td><td><span class="check-yes">✓</span> Full team across disciplines</td></tr>
+              <tr><td>🏖 Holiday &amp; sick day coverage</td><td><span class="check-no">✗</span> Operations pause</td><td><span class="check-yes">✓</span> Continuous coverage</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="text-align:center;margin-top:2rem;" class="reveal">
+          <a href="pricing.html" class="cta-btn">See Pricing &amp; Packages →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Home FAQ Strip -->
+    <section class="home-faq">
+      <div class="container">
+        <h2 class="reveal">Common Questions</h2>
+        <p class="home-faq-sub reveal">Quick answers before you book a call.</p>
+        <div class="faq-accordion">
+          <div class="faq-entry reveal reveal-delay-1">
+            <button class="faq-trigger" aria-expanded="false">How much does it cost?<div class="faq-icon">+</div></button>
+            <div class="faq-body">Packages start from $500/month for up to 20 hours of support in one service area. The Growth plan at $1,400/month covers up to 60 hours across 3 service areas and is our most popular option. All pricing is custom-scoped after a free consultation — no surprises.</div>
+          </div>
+          <div class="faq-entry reveal reveal-delay-2">
+            <button class="faq-trigger" aria-expanded="false">How quickly can we get started?<div class="faq-icon">+</div></button>
+            <div class="faq-body">Most clients are fully onboarded within 3–5 business days. We start with a free 30-minute consultation, then our team integrates with your tools and begins delivering within the week.</div>
+          </div>
+          <div class="faq-entry reveal reveal-delay-3">
+            <button class="faq-trigger" aria-expanded="false">Do I need to sign a long-term contract?<div class="faq-icon">+</div></button>
+            <div class="faq-body">No. All standard plans are month-to-month with 30 days' notice to cancel. There are no setup fees or hidden charges.</div>
+          </div>
+          <div class="faq-entry reveal">
+            <button class="faq-trigger" aria-expanded="false">Is my business data secure?<div class="faq-icon">+</div></button>
+            <div class="faq-body">All client data is handled under strict confidentiality agreements. We use encrypted communications, access-controlled systems, and follow best practices aligned with Canadian privacy law (PIPEDA).</div>
+          </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="book-cta-section">
+      <div class="container" style="position:relative;z-index:1;">
+        <h2 class="reveal">Not sure where to start?</h2>
+        <p class="reveal">Book a free 30-minute consultation. We'll map out your biggest operational wins — no commitment required.</p>
+        <a href="https://calendly.com/info-techchimps/30min" target="_blank" rel="noopener" class="calendly-btn reveal">📅 Book a Free 30-Min Consultation</a>
+        <p class="book-cta-note reveal">Free · No commitment · Results-focused</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="LogoNew.png" alt="Tech Chimps" width="104" height="52" style="height:52px;width:auto;" />
+          <p>Toronto-based operations experts helping businesses scale by delegating the work that slows them down.</p>
+          <div class="footer-socials">
+            <a href="https://www.linkedin.com/company/tech-chimps" target="_blank" rel="noopener" aria-label="LinkedIn">💼</a>
+            <a href="/cdn-cgi/l/email-protection#cda4a3aba2e3b9a8aea5aea5a4a0bdbe8daaa0aca4a1e3aea2a0" aria-label="Email">📧</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="services.html#billing-outsourcing">Billing Outsourcing</a>
+          <a href="services.html#tech-support">Tech Support</a>
+          <a href="services.html#process-improvement">Process Automation</a>
+          <a href="services.html#data-entry">Data Entry</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="index.html">Home</a>
+          <a href="about-us.html">About Us</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="blog.html">Resources</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="/cdn-cgi/l/email-protection#442d2a222b6a3021272c272c2d293437042329252d286a272b29"><span class="__cf_email__" data-cfemail="3851565e57164c5d5b505b505155484b785f55595154165b5755">[email&#160;protected]</span></a>
+          <a href="#">Toronto, Ontario, Canada</a>
+          <a href="https://calendly.com/info-techchimps/30min" target="_blank" rel="noopener" class="cta-btn" style="margin-top:0.8rem;font-size:0.85rem;padding:0.5em 1.1em;display:inline-block;">📅 Book a Call</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Tech Chimps. All rights reserved. · <a href="privacy.html" style="color:rgba(255,255,255,0.5);text-decoration:none;">Privacy Policy</a></span>
+        <span>Toronto, Ontario, Canada</span>
+      </div>
+    </div>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="theme-switch.js"></script>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); navLinks.classList.toggle('open'); });
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { hamburger.classList.remove('open'); navLinks.classList.remove('open'); }));
+    const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }); }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    const cookieBanner = document.getElementById('cookieBanner');
+    if (!localStorage.getItem('tc_cookie_consent')) { setTimeout(() => cookieBanner.classList.add('show'), 1400); }
+    document.getElementById('cookieAccept').addEventListener('click', () => { localStorage.setItem('tc_cookie_consent', 'accepted'); cookieBanner.classList.remove('show'); });
+    document.getElementById('cookieDecline').addEventListener('click', () => { localStorage.setItem('tc_cookie_consent', 'declined'); cookieBanner.classList.remove('show'); });
+    document.querySelectorAll('.faq-trigger').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const entry = btn.closest('.faq-entry');
+        const isOpen = entry.classList.contains('open');
+        document.querySelectorAll('.faq-entry').forEach(e => e.classList.remove('open'));
+        if (!isOpen) entry.classList.add('open');
+            });
+    });
+  </script>
+  <button id="scrollUpBtn" title="Go to top" aria-label="Go to top">
+    <svg viewBox="0 0 24 24"><path d="M12 4c.28 0 .53.11.71.29l7 7a1 1 0 01-1.42 1.42L13 7.41V20a1 1 0 01-2 0V7.41l-5.29 5.3A1 1 0 014.29 11.3l7-7A1 1 0 0112 4z" fill="#fff"/></svg>
+  </button>
+</body>
+</html>
