@@ -163,21 +163,25 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="theme-switch.js"></script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+
+  <script src="theme-switch.js"></script>
   <script>
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-    hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); navLinks.classList.toggle('open'); });
-    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { hamburger.classList.remove('open'); navLinks.classList.remove('open'); }));
-    const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }); }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    document.querySelectorAll('.faq-trigger').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const entry = btn.closest('.faq-entry');
-        const isOpen = entry.classList.contains('open');
-        document.querySelectorAll('.faq-entry').forEach(e => e.classList.remove('open'));
+    var hamburger = document.getElementById('hamburger');
+    var navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', function() { hamburger.classList.toggle('open'); navLinks.classList.toggle('open'); });
+    navLinks.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', function() { hamburger.classList.remove('open'); navLinks.classList.remove('open'); }); });
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+    document.querySelectorAll('.faq-trigger').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var entry = btn.closest('.faq-entry');
+        var isOpen = entry.classList.contains('open');
+        document.querySelectorAll('.faq-entry').forEach(function(e) { e.classList.remove('open'); });
         if (!isOpen) entry.classList.add('open');
-            });
+      });
     });
   </script>
   <button id="scrollUpBtn" title="Go to top" aria-label="Go to top">

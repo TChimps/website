@@ -241,26 +241,32 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="theme-switch.js"></script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+
+  <script src="theme-switch.js"></script>
   <script>
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-    hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); navLinks.classList.toggle('open'); });
-    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { hamburger.classList.remove('open'); navLinks.classList.remove('open'); }));
-    const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }); }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    const cookieBanner = document.getElementById('cookieBanner');
-    if (!localStorage.getItem('tc_cookie_consent')) { setTimeout(() => cookieBanner.classList.add('show'), 1400); }
-    document.getElementById('cookieAccept').addEventListener('click', () => { localStorage.setItem('tc_cookie_consent', 'accepted'); cookieBanner.classList.remove('show'); });
-    document.getElementById('cookieDecline').addEventListener('click', () => { localStorage.setItem('tc_cookie_consent', 'declined'); cookieBanner.classList.remove('show'); });
-    document.querySelectorAll('.faq-trigger').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const entry = btn.closest('.faq-entry');
-        const isOpen = entry.classList.contains('open');
-        document.querySelectorAll('.faq-entry').forEach(e => e.classList.remove('open'));
+    var hamburger = document.getElementById('hamburger');
+    var navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', function() { hamburger.classList.toggle('open'); navLinks.classList.toggle('open'); });
+    navLinks.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', function() { hamburger.classList.remove('open'); navLinks.classList.remove('open'); }); });
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+    document.querySelectorAll('.faq-trigger').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var entry = btn.closest('.faq-entry');
+        var isOpen = entry.classList.contains('open');
+        document.querySelectorAll('.faq-entry').forEach(function(e) { e.classList.remove('open'); });
         if (!isOpen) entry.classList.add('open');
-            });
+      });
     });
+    var cookieBanner = document.getElementById('cookieBanner');
+    if (cookieBanner && !localStorage.getItem('tc_cookie_consent')) { setTimeout(function() { cookieBanner.classList.add('show'); }, 1400); }
+    var ca = document.getElementById('cookieAccept');
+    var cd = document.getElementById('cookieDecline');
+    if (ca) ca.addEventListener('click', function() { localStorage.setItem('tc_cookie_consent', 'accepted'); cookieBanner.classList.remove('show'); });
+    if (cd) cd.addEventListener('click', function() { localStorage.setItem('tc_cookie_consent', 'declined'); cookieBanner.classList.remove('show'); });
   </script>
   <button id="scrollUpBtn" title="Go to top" aria-label="Go to top">
     <svg viewBox="0 0 24 24"><path d="M12 4c.28 0 .53.11.71.29l7 7a1 1 0 01-1.42 1.42L13 7.41V20a1 1 0 01-2 0V7.41l-5.29 5.3A1 1 0 014.29 11.3l7-7A1 1 0 0112 4z" fill="#fff"/></svg>

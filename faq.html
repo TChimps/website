@@ -200,40 +200,38 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="theme-switch.js"></script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+
+  <script src="theme-switch.js"></script>
   <script>
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-    hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); navLinks.classList.toggle('open'); });
-    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { hamburger.classList.remove('open'); navLinks.classList.remove('open'); }));
-
-    // Reveal observer
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    var hamburger = document.getElementById('hamburger');
+    var navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', function() { hamburger.classList.toggle('open'); navLinks.classList.toggle('open'); });
+    navLinks.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', function() { hamburger.classList.remove('open'); navLinks.classList.remove('open'); }); });
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
     }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // FAQ accordion
-    document.querySelectorAll('.faq-trigger').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const entry = btn.closest('.faq-entry');
-        const isOpen = entry.classList.contains('open');
-        document.querySelectorAll('.faq-entry').forEach(e => e.classList.remove('open'));
+    document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+    document.querySelectorAll('.faq-trigger').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var entry = btn.closest('.faq-entry');
+        var isOpen = entry.classList.contains('open');
+        document.querySelectorAll('.faq-entry').forEach(function(e) { e.classList.remove('open'); });
         if (!isOpen) entry.classList.add('open');
       });
     });
-
-    // Category filter
-    const catBtns = document.querySelectorAll('.faq-cat-btn');
-    const faqEntries = document.querySelectorAll('.faq-entry[data-cat]');
-    catBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        catBtns.forEach(b => b.classList.remove('active'));
+    var catBtns = document.querySelectorAll('.faq-cat-btn');
+    var faqEntries = document.querySelectorAll('.faq-entry[data-cat]');
+    catBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        catBtns.forEach(function(b) { b.classList.remove('active'); });
         btn.classList.add('active');
-        const cat = btn.dataset.cat;
-        faqEntries.forEach(entry => {
-          if (cat === 'all' || entry.dataset.cat === cat) {
-            entry.style.di      });
+        var cat = btn.dataset.cat;
+        faqEntries.forEach(function(entry) {
+          if (cat === 'all' || entry.dataset.cat === cat) { entry.style.display = ''; }
+          else { entry.style.display = 'none'; entry.classList.remove('open'); }
+        });
+      });
     });
   </script>
   <button id="scrollUpBtn" title="Go to top" aria-label="Go to top">
