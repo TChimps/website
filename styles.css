@@ -149,7 +149,9 @@ body {
   .nav-links a { font-size: 0.9rem; padding: 0.6em 1em; border-radius: 8px; }
   .nav-links a.active { background: linear-gradient(90deg, var(--brand), var(--brand-variant)); color: #fff; }
 }
-
+.hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 /* ===== HERO (homepage split) ===== */
 .hero-split {
   display: grid;
