@@ -1,37 +1,46 @@
 /* ============================================================
    TECH CHIMPS — MERGED UI
-   Palette:    Original blue brand (#4361ee / #4895ef) + black header
-   Typography: Manrope (original) throughout
-   Layout:     New editorial grid structure & presentation
    ============================================================ */
 
 /* ===== TOKENS ===== */
 :root {
-  /* Original brand blues */
-  --brand:         #4361ee;
-  --brand-variant: #4895ef;
-  --accent-hot:    #e63946;
+  /* Core brand colors (Orange / Black / White) */
+  --brand: #4361ee;           /* Primary color for CTAs and hover */
+  --brand-variant: #4895ef;   /* Slightly deeper color for hover states */
+  --accent: #000000;          /* Accent color (black) — used for header/footer) */
+  --white: #ffffff;
 
-  /* Light theme */
-  --bg-page:    #ffffff;
-  --bg-section: #f4f6fb;
-  --text:       #0b0b0b;
-  --muted:      #6b7280;
-  --border:     rgba(11,18,32,0.11);
-  --shadow:     0 4px 20px rgba(67,97,238,0.09);
-  --ink:        #0b0b0b;
+  /* Light theme tokens (default) */
+  --bg-page: var(--white);    /* page background */
+  --bg-section: var(--white); /* cards and panels on light theme */
+  --text: #0b0b0b;            /* primary text on light (black) */
+  --muted: #6b7280;           /* secondary/muted text on light */
+  --border: #e6e6e6;
+  --shadow: 0 6px 26px rgba(11,18,32,0.06);
+  --focus: rgba(0, 55, 255, 0.18);
+
+  /* Carousel indicators (light): inactive white with visible dark outline */
+  --indicator-inactive: #ffffff;
+  --indicator-active: var(--brand);
+  --indicator-border: rgba(11,18,32,0.18);
 }
 
 [data-theme="dark"] {
-  --brand:         #5a7aff;
-  --brand-variant: #6ba4ff;
-  --bg-page:    #0a0a0f;
+  --brand: #4361ee;
+  --brand-variant: #4895ef;
+  --accent: #000000;
+  
+  --bg-page: #0a0a0f;
   --bg-section: #11111c;
-  --text:       #f0f2ff;
-  --muted:      #8b93a8;
-  --border:     rgba(255,255,255,0.08);
-  --shadow:     0 4px 20px rgba(90,122,255,0.15);
-  --ink:        #f0f2ff;
+  --text: #f0f2ff;
+  --muted: #8b93a8;
+  --border: rgba(255,255,255,0.08);
+  --shadow: 0 4px 20px rgba(90,122,255,0.15);
+  --focus: rgba(90, 122, 255, 0.25);
+
+  --indicator-inactive: #333333;
+  --indicator-active: var(--brand);
+  --indicator-border: transparent;
 }
 
 /* ===== RESET & BASE ===== */
@@ -67,7 +76,7 @@ body {
 
 /* ===== HEADER / NAV ===== */
 .header {
-  background: #0b0b0b;
+  background: var(--accent);
   color: #fff;
   border-bottom: 3px solid var(--brand);
   position: relative;
@@ -91,6 +100,7 @@ body {
   justify-content: space-between;
   padding: 1.2rem 0 1rem;
   gap: 1rem;
+  position: relative;
 }
 
 .nav-links {
@@ -115,24 +125,33 @@ body {
   color: #fff;
 }
 
-/* Hamburger */
+/* Hamburger & Animated Icon */
 .hamburger {
   display: none;
   flex-direction: column;
   gap: 5px;
-  background: rgba(255,255,255,0.08);
-  border: 1.5px solid rgba(255,255,255,0.2);
-  border-radius: 6px;
+  background: transparent;
+  border: none;
   padding: 8px;
   cursor: pointer;
+  position: relative;
+  z-index: 1000;
 }
 .hamburger span {
   display: block;
-  width: 22px; height: 2px;
+  width: 24px; height: 2px;
   background: #fff;
   border-radius: 2px;
-  transition: 0.2s;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
 }
+
+/* Burger Animation to 'X' */
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile Menu & Active State Implementation */
 @media(max-width: 768px) {
   .hamburger { display: flex; }
   .nav-links {
@@ -141,13 +160,31 @@ body {
     position: absolute; top: 100%; left: 0; right: 0;
     background: #0b0b0b;
     border-top: 2px solid var(--brand);
-    padding: 1rem 1.5rem 1.5rem;
+    padding: 1rem 0; 
     z-index: 100;
-    gap: 0.25rem;
+    gap: 0;
   }
   .nav-links.open { display: flex; }
-  .nav-links a { font-size: 0.9rem; padding: 0.6em 1em; border-radius: 8px; }
-  .nav-links a.active { background: linear-gradient(90deg, var(--brand), var(--brand-variant)); color: #fff; }
+  .nav-links a { 
+    font-size: 0.95rem; 
+    padding: 0.8em 1.5rem; 
+    border-radius: 0; 
+    border-left: 3px solid transparent; 
+    width: 100%;
+    display: block;
+  }
+  .nav-links a:hover {
+    background: rgba(255,255,255,0.05);
+  }
+  
+  /* ===== MOBILE NAV ACTIVE INDICATOR ===== */
+  .nav-links a.active { 
+    background: rgba(67,97,238,0.25); 
+    border-left: 3px solid var(--brand); 
+    border-radius: 0; 
+    padding-left: 1.3rem; 
+    color: #fff;
+  }
 }
 
 /* ===== HERO (homepage split) ===== */
@@ -394,7 +431,7 @@ h4 { font-weight: 700; font-size: 1rem; color: var(--text); margin-bottom: 0.4re
   border: 1.5px solid var(--border); border-radius: 12px;
   overflow: hidden; box-shadow: var(--shadow);
 }
-.compare-table thead { background: #0b0b0b; color: #fff; }
+.compare-table thead { background: var(--accent); color: #fff; }
 [data-theme="dark"] .compare-table thead { background: #111; }
 .compare-table th {
   padding: 0.9rem 1.2rem; text-align: left;
@@ -479,7 +516,7 @@ h4 { font-weight: 700; font-size: 1rem; color: var(--text); margin-bottom: 0.4re
 
 /* ===== FOOTER ===== */
 .footer {
-  background: #0b0b0b; color: rgba(255,255,255,0.55);
+  background: var(--accent); color: rgba(255,255,255,0.55);
   border-top: 3px solid var(--brand); padding: 4rem 0 0;
 }
 [data-theme="dark"] .footer { background: #06060f; }
