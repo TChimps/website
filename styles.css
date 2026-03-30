@@ -171,8 +171,7 @@ body {
     display: none;
     flex-direction: column;
     position: absolute; top: 100%; left: 0; right: 0;
-    /* background: #0b0b0b; */
-    background: #1f5594f5;
+    background: #0b0b0b;
     border-top: 2px solid var(--brand);
     padding: 1rem 0; 
     z-index: 100;
