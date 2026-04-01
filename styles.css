@@ -91,7 +91,7 @@ body {
   color: #fff;
   border-bottom: 3px solid var(--brand);
   position: relative;
-  overflow: hidden; /* Clips the background glow to prevent layout shift */
+  overflow: visible; /* Must be visible so the mobile dropdown isn't clipped */
 }
 [data-theme="dark"] .header { background: #06060f; }
 
@@ -105,6 +105,7 @@ body {
   border-radius: 50%;
   background: radial-gradient(circle, rgba(67,97,238,0.12) 0%, transparent 70%);
   pointer-events: none;
+  overflow: clip; /* Clip only this decorative element, not the dropdown */
 }
 
 .navbar {
@@ -170,12 +171,13 @@ body {
   .nav-links {
     display: none;
     flex-direction: column;
-    position: absolute; top: 100%; left: 0; right: 0;
+    position: absolute; top: 100%; left: -1.5rem; right: -1.5rem;
     background: #0b0b0b;
     border-top: 2px solid var(--brand);
     padding: 1rem 0; 
-    z-index: 100;
+    z-index: 9990;
     gap: 0;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
   }
   .nav-links.open { display: flex; }
   .nav-links a { 
