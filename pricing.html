@@ -56,6 +56,7 @@
       box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
     }
     
+    /* Mobile-optimized tooltip */
     .tooltip {
       position: relative;
       display: inline-block;
@@ -65,36 +66,67 @@
     
     .tooltip .tooltiptext {
       visibility: hidden;
-      width: 280px;
       background-color: #333;
       color: #fff;
       text-align: left;
       border-radius: 6px;
       padding: 0.75rem;
       position: absolute;
-      z-index: 1;
-      bottom: 125%;
-      left: 50%;
-      margin-left: -140px;
+      z-index: 1000;
       opacity: 0;
       transition: opacity 0.3s;
       font-size: 0.85rem;
       line-height: 1.4;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      width: max-content;
+      max-width: 280px;
     }
     
-    .tooltip .tooltiptext::after {
-      content: "";
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      margin-left: -5px;
-      border-width: 5px;
-      border-style: solid;
-      border-color: #333 transparent transparent transparent;
+    /* Desktop positioning */
+    @media (min-width: 769px) {
+      .tooltip .tooltiptext {
+        bottom: 125%;
+        left: 50%;
+        margin-left: -140px;
+        width: 280px;
+      }
+      
+      .tooltip .tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #333 transparent transparent transparent;
+      }
     }
     
-    .tooltip:hover .tooltiptext {
+    /* Mobile positioning */
+    @media (max-width: 768px) {
+      .tooltip .tooltiptext {
+        bottom: 125%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100vw - 3rem);
+        max-width: 280px;
+      }
+      
+      .tooltip .tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #333 transparent transparent transparent;
+      }
+    }
+    
+    .tooltip:hover .tooltiptext,
+    .tooltip:active .tooltiptext {
       visibility: visible;
       opacity: 1;
     }
@@ -193,30 +225,72 @@
       display: none;
     }
     
+    /* Dynamic comparison styles */
+    .comparison-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .comparison-column {
+      background: var(--bg-section);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    
+    .comparison-column.highlighted {
+      border: 2px solid var(--brand);
+      background: var(--bg-page);
+    }
+    
+    .comparison-header {
+      text-align: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--border);
+    }
+    
+    .comparison-header h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .comparison-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .comparison-row:last-child {
+      border-bottom: none;
+      margin-top: 1rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--border);
+    }
+    
+    .comparison-label {
+      font-weight: 600;
+    }
+    
+    .comparison-value {
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    
+    .comparison-value.savings {
+      color: var(--brand);
+      font-size: 1.2rem;
+    }
+    
     @media (max-width: 768px) {
-      .comparison-table {
-        display: none;
+      .comparison-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
       }
-      .comparison-mobile {
-        display: block;
-      }
-      .comparison-card {
-        background: var(--bg-page);
-        padding: 1.5rem;
-        border-radius: 12px;
-        margin-bottom: 1.5rem;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      }
-      .comparison-card h4 {
-        margin-bottom: 1rem;
-        color: var(--brand);
-      }
-      .comparison-row {
-        display: flex;
-        justify-content: space-between;
-        padding: 0.75rem 0;
-        border-bottom: 1px solid var(--border);
-      }
+      
       .savings-number {
         font-size: 2rem;
       }
@@ -241,6 +315,11 @@
       border-radius: 8px;
       margin-bottom: 1rem;
       overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .faq-item:hover {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
     
     .faq-question {
@@ -251,6 +330,7 @@
       justify-content: space-between;
       align-items: center;
       transition: background 0.2s;
+      user-select: none;
     }
     
     .faq-question:hover {
@@ -262,6 +342,8 @@
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.3s ease, padding 0.3s ease;
+      color: var(--muted);
+      line-height: 1.6;
     }
     
     .faq-answer.open {
@@ -269,10 +351,20 @@
       max-height: 500px;
     }
     
+    .faq-answer ul {
+      margin: 0.5rem 0;
+      padding-left: 1.5rem;
+    }
+    
+    .faq-answer li {
+      margin: 0.5rem 0;
+    }
+    
     .faq-toggle {
       font-size: 1.5rem;
       font-weight: 300;
       transition: transform 0.3s;
+      color: var(--brand);
     }
     
     .faq-question.active .faq-toggle {
@@ -284,6 +376,17 @@
       font-weight: 600;
       font-size: 1.1rem;
       margin-bottom: 1rem;
+    }
+    
+    .footnotes {
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    
+    .footnotes p {
+      margin: 0.5rem 0;
     }
   </style>
 </head>
@@ -315,7 +418,7 @@
         <div class="hero-content">
           <p class="tagline">Tech Chimps: Operations Talent, Simplified</p>
           <h1>Build Your Team Offshore. Managed from Toronto.</h1>
-          <p>We provide <span class="tooltip">dedicated offshore talent<span class="tooltiptext">A dedicated resource works exclusively for your company during your business hours—not shared VAs or ticket-based support. You get a full-time team member.</span></span> with Toronto-based oversight. Replace $60k+ local roles with skilled professionals for a fraction of the cost—no agencies, no markups, just direct hires.</p>
+          <p>We provide <span class="tooltip">dedicated offshore talent<span class="tooltiptext">Your team member works exclusively for you—full-time, during your hours (EST/PST), reporting directly to you. Think of them as a remote employee, not a contractor.</span></span> with Toronto-based oversight. Replace $60k+ local roles with skilled professionals for a fraction of the cost—no agencies, no markups, just direct hires.</p>
           <div class="trust-badge">
             🛡️ 2-Week Risk-Free Guarantee — Try Before You Commit
           </div>
@@ -410,12 +513,12 @@
             <div class="savings-result">
               <div style="text-align:center;">
                 <div style="font-size:1rem;opacity:0.9;">Your Annual Savings</div>
-                <div class="savings-number" id="savingsAmount">$43,000</div>
+                <div class="savings-number" id="savingsAmount">$50,600</div>
                 <div style="font-size:0.9rem;opacity:0.8;margin-top:0.5rem;">vs hiring locally in Toronto</div>
               </div>
               <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.3);font-size:0.9rem;opacity:0.9;">
                 <strong>Your investment:</strong> <span id="monthlyInvestment">$1,950</span>/month<br>
-                <strong>Local cost equivalent:</strong> <span id="localCost">$64,500</span>/year
+                <strong>Local cost equivalent:</strong> <span id="localCost">$74,000</span>/year
               </div>
             </div>
           </div>
@@ -423,139 +526,105 @@
       </div>
     </section>
 
+    <!-- Dynamic Comparison Section -->
     <section style="padding:4rem 0; background:var(--bg-page); border-top:1px solid var(--border);">
         <div class="container">
-            <h2 style="text-align:center; margin-bottom:3rem;" class="reveal">The Math That Matters</h2>
+            <h2 style="text-align:center; margin-bottom:1rem;" class="reveal">The Math That Matters</h2>
+            <p style="text-align:center;color:var(--muted);margin-bottom:3rem;" class="reveal">Real costs for a Billing Coordinator in Toronto</p>
             
-            <!-- Desktop Table -->
-            <div style="overflow-x:auto;" class="comparison-table">
-                <table style="width:100%; border-collapse: collapse; background: var(--bg-section); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-                    <thead style="background: var(--brand); color: #fff;">
-                        <tr>
-                            <th style="padding:1.5rem; text-align:left;">Cost Breakdown</th>
-                            <th style="padding:1.5rem; text-align:center;">Local Hire (Toronto)</th>
-                            <th style="padding:1.5rem; text-align:center;">Tech Chimps (Offshore)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="border-bottom: 1px solid var(--border);">
-                            <td style="padding:1.2rem;"><strong>Role:</strong> Billing Coordinator</td>
-                            <td style="padding:1.2rem; text-align:center;">—</td>
-                            <td style="padding:1.2rem; text-align:center;">—</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid var(--border);">
-                            <td style="padding:1.2rem;">Annual Base Salary</td>
-                            <td style="padding:1.2rem; text-align:center;">$58,000<sup>*</sup></td>
-                            <td style="padding:1.2rem; text-align:center; color:var(--brand); font-weight:700;">$23,400</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid var(--border);">
-                            <td style="padding:1.2rem;">Payroll Taxes (CPP, EI)</td>
-                            <td style="padding:1.2rem; text-align:center;">$4,200</td>
-                            <td style="padding:1.2rem; text-align:center; color:var(--brand);">$0 (Included)</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid var(--border);">
-                            <td style="padding:1.2rem;">Health Benefits & Insurance</td>
-                            <td style="padding:1.2rem; text-align:center;">$3,500</td>
-                            <td style="padding:1.2rem; text-align:center; color:var(--brand);">$0 (Included)</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid var(--border);">
-                            <td style="padding:1.2rem;">Desk Space & Equipment<sup>**</sup></td>
-                            <td style="padding:1.2rem; text-align:center;">$4,800</td>
-                            <td style="padding:1.2rem; text-align:center; color:var(--brand);">$0 (Included)</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid var(--border);">
-                            <td style="padding:1.2rem;">Software Licenses & Tools</td>
-                            <td style="padding:1.2rem; text-align:center;">$1,200</td>
-                            <td style="padding:1.2rem; text-align:center; color:var(--brand);">$0 (Included)</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid var(--border);">
-                            <td style="padding:1.2rem;">Onboarding & Training Time</td>
-                            <td style="padding:1.2rem; text-align:center;">$2,300<sup>***</sup></td>
-                            <td style="padding:1.2rem; text-align:center; color:var(--brand);">$0 (We handle it)</td>
-                        </tr>
-                        <tr style="background: var(--bg-page); font-weight: 800; font-size:1.1rem;">
-                            <td style="padding:1.5rem;">Total Annual Cost</td>
-                            <td style="padding:1.5rem; text-align:center;">$74,000</td>
-                            <td style="padding:1.5rem; text-align:center; color:var(--brand); font-size:1.3rem;">$23,400</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            
-            <!-- Mobile Cards -->
-            <div class="comparison-mobile">
-              <div class="comparison-card">
-                <h4>🏢 Local Hire (Toronto)</h4>
-                <div class="comparison-row">
-                  <span>Base Salary</span>
-                  <strong>$58,000</strong>
+            <div class="comparison-container reveal">
+              <!-- Local Hire Column -->
+              <div class="comparison-column">
+                <div class="comparison-header">
+                  <h3>🏢 Local Hire (Toronto)</h3>
                 </div>
+                
                 <div class="comparison-row">
-                  <span>Payroll Taxes</span>
-                  <strong>$4,200</strong>
+                  <span class="comparison-label">Annual Base Salary</span>
+                  <span class="comparison-value" id="localSalary">$58,000</span>
                 </div>
+                
                 <div class="comparison-row">
-                  <span>Benefits</span>
-                  <strong>$3,500</strong>
+                  <span class="comparison-label">Payroll Taxes (CPP, EI)</span>
+                  <span class="comparison-value" id="localTaxes">$4,500</span>
                 </div>
+                
                 <div class="comparison-row">
-                  <span>Desk & Equipment</span>
-                  <strong>$4,800</strong>
+                  <span class="comparison-label">Health Benefits</span>
+                  <span class="comparison-value" id="localBenefits">$4,000</span>
                 </div>
+                
                 <div class="comparison-row">
-                  <span>Software</span>
-                  <strong>$1,200</strong>
+                  <span class="comparison-label">Desk Space & Equipment</span>
+                  <span class="comparison-value" id="localDesk">$4,800</span>
                 </div>
+                
                 <div class="comparison-row">
-                  <span>Onboarding</span>
-                  <strong>$2,300</strong>
+                  <span class="comparison-label">Software Licenses</span>
+                  <span class="comparison-value" id="localSoftware">$1,200</span>
                 </div>
-                <div class="comparison-row" style="border:none;padding-top:1rem;margin-top:1rem;border-top:2px solid var(--border);">
-                  <span style="font-size:1.1rem;"><strong>Total Annual Cost</strong></span>
-                  <strong style="font-size:1.2rem;">$74,000</strong>
+                
+                <div class="comparison-row">
+                  <span class="comparison-label">Onboarding & Training</span>
+                  <span class="comparison-value" id="localOnboarding">$1,500</span>
+                </div>
+                
+                <div class="comparison-row">
+                  <span class="comparison-label" style="font-size:1.1rem;">Total Annual Cost</span>
+                  <span class="comparison-value" style="font-size:1.3rem;" id="localTotal">$74,000</span>
                 </div>
               </div>
               
-              <div class="comparison-card" style="border:2px solid var(--brand);">
-                <h4>🌍 Tech Chimps (Offshore)</h4>
-                <div class="comparison-row">
-                  <span>All-In Price</span>
-                  <strong style="color:var(--brand);">$23,400</strong>
+              <!-- Tech Chimps Column -->
+              <div class="comparison-column highlighted">
+                <div class="comparison-header">
+                  <h3 style="color:var(--brand);">🌍 Tech Chimps (Offshore)</h3>
                 </div>
+                
                 <div class="comparison-row">
-                  <span>Payroll Taxes</span>
-                  <strong style="color:var(--brand);">Included</strong>
+                  <span class="comparison-label">All-Inclusive Price</span>
+                  <span class="comparison-value savings" id="offshoreSalary">$23,400</span>
                 </div>
+                
                 <div class="comparison-row">
-                  <span>Benefits</span>
-                  <strong style="color:var(--brand);">Included</strong>
+                  <span class="comparison-label">Payroll Taxes (CPP, EI)</span>
+                  <span class="comparison-value savings">Included</span>
                 </div>
+                
                 <div class="comparison-row">
-                  <span>Desk & Equipment</span>
-                  <strong style="color:var(--brand);">Included</strong>
+                  <span class="comparison-label">Health Benefits</span>
+                  <span class="comparison-value savings">Included</span>
                 </div>
+                
                 <div class="comparison-row">
-                  <span>Software</span>
-                  <strong style="color:var(--brand);">Included</strong>
+                  <span class="comparison-label">Desk Space & Equipment</span>
+                  <span class="comparison-value savings">Included</span>
                 </div>
+                
                 <div class="comparison-row">
-                  <span>Onboarding</span>
-                  <strong style="color:var(--brand);">We handle it</strong>
+                  <span class="comparison-label">Software Licenses</span>
+                  <span class="comparison-value savings">Included</span>
                 </div>
-                <div class="comparison-row" style="border:none;padding-top:1rem;margin-top:1rem;border-top:2px solid var(--brand);">
-                  <span style="font-size:1.1rem;"><strong>Total Annual Cost</strong></span>
-                  <strong style="font-size:1.3rem;color:var(--brand);">$23,400</strong>
+                
+                <div class="comparison-row">
+                  <span class="comparison-label">Onboarding & Training</span>
+                  <span class="comparison-value savings">We handle it</span>
+                </div>
+                
+                <div class="comparison-row">
+                  <span class="comparison-label" style="font-size:1.1rem;">Total Annual Cost</span>
+                  <span class="comparison-value savings" style="font-size:1.4rem;" id="offshoreTotal">$23,400</span>
                 </div>
               </div>
             </div>
             
-            <div style="margin-top:2rem;font-size:0.85rem;opacity:0.7;line-height:1.6;">
+            <div class="footnotes reveal">
               <p><sup>*</sup>Based on Indeed.ca average for Billing Coordinator in Toronto, 2026</p>
-              <p><sup>**</sup>Desk space calculated at $400/month (Toronto commercial rent avg), plus $600 one-time equipment</p>
-              <p><sup>***</sup>Onboarding cost = 40 hours manager time at $50/hr + 1 week reduced productivity</p>
+              <p><sup>**</sup>Desk space calculated at $400/month (Toronto commercial rent avg), plus equipment</p>
+              <p><sup>***</sup>Onboarding cost = manager time + reduced productivity during training period</p>
             </div>
             
-            <p style="text-align:center; margin-top:2.5rem; font-weight:700; color:var(--brand); font-size:1.3rem;" class="reveal">💰 Net Annual Savings per Hire: $50,600</p>
+            <p style="text-align:center; margin-top:2.5rem; font-weight:700; color:var(--brand); font-size:1.3rem;" class="reveal">💰 Net Annual Savings per Hire: <span id="totalSavingsDisplay">$50,600</span></p>
         </div>
     </section>
 
@@ -572,7 +641,7 @@
             </div>
             <div class="faq-answer">
               <p>Most clients are up and running within 2-3 weeks. Here's the typical timeline:</p>
-              <ul style="margin-top:0.5rem;">
+              <ul>
                 <li><strong>Week 1:</strong> Free consultation, role scoping, and candidate shortlist</li>
                 <li><strong>Week 2:</strong> Interviews with pre-vetted candidates, selection, and onboarding prep</li>
                 <li><strong>Week 3:</strong> Your new team member starts (we handle all HR, payroll, and equipment)</li>
@@ -599,7 +668,7 @@
             </div>
             <div class="faq-answer">
               <p>All dedicated resources work during <strong>your</strong> business hours (EST or PST). This means:</p>
-              <ul style="margin-top:0.5rem;">
+              <ul>
                 <li>9am-5pm availability in your timezone</li>
                 <li>Real-time communication via Slack, email, or phone</li>
                 <li>Same-day response times for urgent requests</li>
@@ -616,7 +685,7 @@
             </div>
             <div class="faq-answer">
               <p>We take security seriously:</p>
-              <ul style="margin-top:0.5rem;">
+              <ul>
                 <li><strong>NDAs & Confidentiality:</strong> All team members sign comprehensive NDAs</li>
                 <li><strong>Secure Infrastructure:</strong> Company-provided laptops with VPN, encrypted storage, and monitored access</li>
                 <li><strong>HIPAA/PCI Compliance:</strong> Available for healthcare and payment processing roles</li>
@@ -647,7 +716,7 @@
             </div>
             <div class="faq-answer">
               <p>We specialize in back-office and operational roles where you need consistent, high-quality execution:</p>
-              <ul style="margin-top:0.5rem;">
+              <ul>
                 <li><strong>Billing & Finance:</strong> AR/AP coordinators, medical billing, insurance verification, collections</li>
                 <li><strong>Customer Support:</strong> Technical support specialists, account managers, help desk agents</li>
                 <li><strong>Admin & Operations:</strong> Executive assistants, data entry, CRM management, scheduling</li>
@@ -675,22 +744,37 @@
       <div class="footer-inner">
         <div class="footer-brand">
           <img src="LogoNew.png" alt="Tech Chimps" width="104" height="52" style="height:52px;width:auto;" />
-          <p><strong>Operations Talent, Simplified.</strong><br>Toronto-based staffing helping businesses scale by delegating offshore—without the complexity.</p>
+          <p>Toronto-based operations experts helping businesses scale by delegating the work that slows them down.</p>
+          <div class="footer-socials">
+            <a href="https://www.linkedin.com/company/tech-chimps" target="_blank" rel="noopener" aria-label="LinkedIn">💼</a>
+            <a href="mailto:info.techchimps@gmail.com" aria-label="Email">📧</a>
+          </div>
         </div>
         <div class="footer-col">
           <h5>Services</h5>
           <a href="services.html#billing-outsourcing">Billing Outsourcing</a>
           <a href="services.html#tech-support">Tech Support</a>
           <a href="services.html#process-improvement">Process Automation</a>
+          <a href="services.html#data-entry">Data Entry</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="index.html">Home</a>
+          <a href="about-us.html">About Us</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="blog.html">Resources</a>
+          <a href="faq.html">FAQ</a>
         </div>
         <div class="footer-col">
           <h5>Contact</h5>
           info.techchimps@gmail.com
           <a href="contact.html">Contact Page</a>
+          <a href="https://calendly.com/info-techchimps/30min" target="_blank" rel="noopener" class="cta-btn" style="margin-top:.8rem;font-size:.85rem;padding:.5em 1.1em;display:inline-block;">📅 Book a Call</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>&copy; 2026 Tech Chimps. All rights reserved. &middot; Toronto, Ontario, Canada</span>
+        <span>&copy; 2026 Tech Chimps. All rights reserved. · <a href="privacy.html" style="color:rgba(255,255,255,0.5);text-decoration:none;">Privacy Policy</a></span>
+        <span>Toronto, Ontario, Canada</span>
       </div>
     </div>
   </footer>
@@ -716,23 +800,57 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
     
-    // Savings Calculator
+    // Savings Calculator with Dynamic Comparison
     var slider = document.getElementById('hiresSlider');
     var hireCount = document.getElementById('hireCount');
     var savingsAmount = document.getElementById('savingsAmount');
     var monthlyInvestment = document.getElementById('monthlyInvestment');
     var localCost = document.getElementById('localCost');
     
+    // Comparison values
+    var localSalary = document.getElementById('localSalary');
+    var localTaxes = document.getElementById('localTaxes');
+    var localBenefits = document.getElementById('localBenefits');
+    var localDesk = document.getElementById('localDesk');
+    var localSoftware = document.getElementById('localSoftware');
+    var localOnboarding = document.getElementById('localOnboarding');
+    var localTotal = document.getElementById('localTotal');
+    var offshoreSalary = document.getElementById('offshoreSalary');
+    var offshoreTotal = document.getElementById('offshoreTotal');
+    var totalSavingsDisplay = document.getElementById('totalSavingsDisplay');
+    
+    // Base values per hire
+    var baseSalary = 58000;
+    var baseTaxes = 4500;
+    var baseBenefits = 4000;
+    var baseDesk = 4800;
+    var baseSoftware = 1200;
+    var baseOnboarding = 1500;
+    var baseOffshore = 23400;
+    
     slider.addEventListener('input', function() {
       var hires = parseInt(this.value);
-      var savingsPerHire = 50600;
+      var localCostPerHire = baseSalary + baseTaxes + baseBenefits + baseDesk + baseSoftware + baseOnboarding;
+      var savingsPerHire = localCostPerHire - baseOffshore;
       var monthlyPerHire = 1950;
-      var localCostPerHire = 74000;
       
+      // Update calculator
       hireCount.textContent = hires;
       savingsAmount.textContent = '$' + (savingsPerHire * hires).toLocaleString();
       monthlyInvestment.textContent = '$' + (monthlyPerHire * hires).toLocaleString();
       localCost.textContent = '$' + (localCostPerHire * hires).toLocaleString();
+      
+      // Update comparison table
+      localSalary.textContent = '$' + (baseSalary * hires).toLocaleString();
+      localTaxes.textContent = '$' + (baseTaxes * hires).toLocaleString();
+      localBenefits.textContent = '$' + (baseBenefits * hires).toLocaleString();
+      localDesk.textContent = '$' + (baseDesk * hires).toLocaleString();
+      localSoftware.textContent = '$' + (baseSoftware * hires).toLocaleString();
+      localOnboarding.textContent = '$' + (baseOnboarding * hires).toLocaleString();
+      localTotal.textContent = '$' + (localCostPerHire * hires).toLocaleString();
+      offshoreSalary.textContent = '$' + (baseOffshore * hires).toLocaleString();
+      offshoreTotal.textContent = '$' + (baseOffshore * hires).toLocaleString();
+      totalSavingsDisplay.textContent = '$' + (savingsPerHire * hires).toLocaleString();
     });
     
     // FAQ Accordion
@@ -757,5 +875,8 @@
       });
     });
   </script>
+  <button id="scrollUpBtn" title="Go to top" aria-label="Go to top">
+    <svg viewBox="0 0 24 24"><path d="M12 4c.28 0 .53.11.71.29l7 7a1 1 0 01-1.42 1.42L13 7.41V20a1 1 0 01-2 0V7.41l-5.29 5.3A1 1 0 014.29 11.3l7-7A1 1 0 0112 4z" fill="#fff"/></svg>
+  </button>
 </body>
 </html>
