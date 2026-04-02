@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
   
-  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -45,7 +44,7 @@
     
     .guarantee-badge {
       position: absolute;
-      top: 8px;
+      top: 6px;
       right: 20px;
       background: #10b981;
       color: white;
@@ -132,83 +131,6 @@
       opacity: 1;
     }
     
-    /* Integrated Calculator + Comparison Section */
-    .integrated-comparison {
-      background: var(--bg-section);
-      padding: 5rem 0;
-      border-top: 1px solid var(--border);
-    }
-    
-    .savings-calculator {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      padding: 3rem 2rem;
-      border-radius: 16px;
-      color: white;
-      margin-bottom: 3rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    }
-    
-    .calculator-inner {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    
-    .slider-container {
-      margin: 2rem 0;
-    }
-    
-    .slider-label {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 1rem;
-      font-weight: 600;
-    }
-    
-    .slider {
-      width: 100%;
-      height: 8px;
-      border-radius: 5px;
-      background: rgba(255,255,255,0.3);
-      outline: none;
-      -webkit-appearance: none;
-    }
-    
-    .slider::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: white;
-      cursor: pointer;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-    }
-    
-    .slider::-moz-range-thumb {
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: white;
-      cursor: pointer;
-      border: none;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-    }
-    
-    .savings-result {
-      background: rgba(255,255,255,0.15);
-      padding: 2rem;
-      border-radius: 12px;
-      margin-top: 2rem;
-      backdrop-filter: blur(10px);
-    }
-    
-    .savings-number {
-      font-size: 3rem;
-      font-weight: 800;
-      margin: 0.5rem 0;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    }
-    
     .pricing-note {
       background: #fff9e6;
       border-left: 4px solid #ffc107;
@@ -221,75 +143,6 @@
     [data-theme="dark"] .pricing-note {
       background: rgba(255, 193, 7, 0.1);
       color: #ffd54f;
-    }
-    
-    /* Dynamic comparison styles */
-    .comparison-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-    
-    .comparison-column {
-      background: var(--bg-page);
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-    
-    .comparison-column.highlighted {
-      border: 2px solid var(--brand);
-    }
-    
-    .comparison-header {
-      text-align: center;
-      margin-bottom: 2rem;
-      padding-bottom: 1rem;
-      border-bottom: 2px solid var(--border);
-    }
-    
-    .comparison-header h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-    
-    .comparison-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 1rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-    
-    .comparison-row:last-child {
-      border-bottom: none;
-      margin-top: 1rem;
-      padding-top: 1.5rem;
-      border-top: 2px solid var(--border);
-    }
-    
-    .comparison-label {
-      font-weight: 600;
-    }
-    
-    .comparison-value {
-      font-weight: 700;
-      font-size: 1.1rem;
-    }
-    
-    .comparison-value.savings {
-      color: var(--brand);
-      font-size: 1.2rem;
-    }
-    
-    @media (max-width: 768px) {
-      .comparison-container {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-      
-      .savings-number {
-        font-size: 2rem;
-      }
     }
     
     .urgency-banner {
@@ -399,17 +252,6 @@
       font-size: 1.1rem;
       margin-bottom: 1rem;
     }
-    
-    .footnotes {
-      margin-top: 2rem;
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-    
-    .footnotes p {
-      margin: 0.5rem 0;
-    }
   </style>
 </head>
 <body>
@@ -467,11 +309,11 @@
             <div class="price">$1,200<span>/mo</span></div>
             <p>Perfect for growing businesses that need reliable admin support without the overhead of a local hire.</p>
             <ul class="pricing-features">
-              <li>✓ 1 Dedicated Admin (40hrs/week)</li>
-              <li>✓ Data entry, filing, CRM updates</li>
-              <li>✓ Calendar & email management</li>
-              <li>✓ Weekly performance dashboards</li>
-              <li>✓ Month-to-month, cancel anytime</li>
+              <li>1 Dedicated Admin (40hrs/week)</li>
+              <li>Data entry, filing, CRM updates</li>
+              <li>Calendar & email management</li>
+              <li>Weekly performance dashboards</li>
+              <li>Month-to-month, cancel anytime</li>
               <li style="margin-top:1rem;padding-top:1rem;border-top:2px solid var(--border);"><strong>💰 Annual Savings vs Local Hire: $38,000+</strong></li>
             </ul>
             <a href="contact.html" class="cta-btn" style="width:100%;text-align:center;box-sizing:border-box;">Get Started — Book Free Consultation</a>
@@ -485,11 +327,11 @@
             <div class="price">$1,950<span>/mo</span></div>
             <p><strong>Replaces a $60,000 local role.</strong> Ideal for billing coordinators, tech support leads, or operations specialists.</p>
             <ul class="pricing-features">
-              <li>✓ 1 Specialized Professional (40hrs/week)</li>
-              <li>✓ Medical billing, AR/AP, or tech support</li>
-              <li>✓ EST/PST shift coverage included</li>
-              <li>✓ Weekly performance audits & 1:1s</li>
-              <li>✓ Dedicated account manager</li>
+              <li>1 Specialized Professional (40hrs/week)</li>
+              <li>Medical billing, AR/AP, or tech support</li>
+              <li>EST/PST shift coverage included</li>
+              <li>Weekly performance audits & 1:1s</li>
+              <li>Dedicated account manager</li>
               <li style="margin-top:1rem;padding-top:1rem;border-top:2px solid rgba(255,255,255,0.3);"><strong>💰 Annual Savings vs Local Hire: $43,000+</strong></li>
             </ul>
             <a href="contact.html" class="cta-btn" style="width:100%;text-align:center;box-sizing:border-box;background:#fff;color:#4361ee;">Get Started — Book Free Consultation</a>
@@ -502,11 +344,11 @@
             <div class="price">$5,500<span>/mo</span></div>
             <p><strong>A managed offshore department.</strong> Get a team with a dedicated lead who handles scheduling, quality control, and escalations.</p>
             <ul class="pricing-features">
-              <li>✓ Team of 3 professionals + 1 senior lead</li>
-              <li>✓ Lead manages team performance & workflow</li>
-              <li>✓ Custom workflow automation build</li>
-              <li>✓ 24/7 support options available</li>
-              <li>✓ Quarterly strategic reviews</li>
+              <li>Team of 3 professionals + 1 senior lead</li>
+              <li>Lead manages team performance & workflow</li>
+              <li>Custom workflow automation build</li>
+              <li>24/7 support options available</li>
+              <li>Quarterly strategic reviews</li>
               <li style="margin-top:1rem;padding-top:1rem;border-top:2px solid var(--border);"><strong>💰 Annual Savings vs Local Hires: $145,000+</strong></li>
             </ul>
             <a href="contact.html" class="cta-btn" style="width:100%;text-align:center;box-sizing:border-box;">Get Started — Book Free Consultation</a>
@@ -516,138 +358,6 @@
       </div>
     </section>
 
-    <!-- Integrated Calculator + Comparison Section -->
-    <section class="integrated-comparison">
-      <div class="container">
-        <!-- Calculator -->
-        <div class="savings-calculator reveal">
-          <div class="calculator-inner">
-            <h2 style="text-align:center;margin-bottom:1rem;color:white;">Calculate Your Savings</h2>
-            <p style="text-align:center;opacity:0.9;margin-bottom:2rem;">See how much you could save by hiring offshore talent</p>
-            
-            <div class="slider-container">
-              <div class="slider-label">
-                <span>Number of Hires:</span>
-                <span id="hireCount">1</span>
-              </div>
-              <input type="range" min="1" max="10" value="1" class="slider" id="hiresSlider">
-            </div>
-            
-            <div class="savings-result">
-              <div style="text-align:center;">
-                <div style="font-size:1rem;opacity:0.9;">Your Annual Savings</div>
-                <div class="savings-number" id="savingsAmount">$50,600</div>
-                <div style="font-size:0.9rem;opacity:0.8;margin-top:0.5rem;">vs hiring locally in Toronto</div>
-              </div>
-              <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.3);font-size:0.9rem;opacity:0.9;">
-                <strong>Your investment:</strong> <span id="monthlyInvestment">$1,950</span>/month<br>
-                <strong>Local cost equivalent:</strong> <span id="localCost">$74,000</span>/year
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Comparison Table -->
-        <h2 style="text-align:center; margin-bottom:1rem;" class="reveal">The Math That Matters</h2>
-        <p style="text-align:center;color:var(--muted);margin-bottom:3rem;" class="reveal">Real costs for a typical operations role in Toronto</p>
-        
-        <div class="comparison-container reveal">
-          <!-- Local Hire Column -->
-          <div class="comparison-column">
-            <div class="comparison-header">
-              <h3>🏢 Local Hire (Toronto)</h3>
-            </div>
-            
-            <div class="comparison-row">
-              <span class="comparison-label">Annual Base Salary</span>
-              <span class="comparison-value" id="localSalary">$58,000</span>
-            </div>
-            
-            <div class="comparison-row">
-              <span class="comparison-label">Payroll Taxes (CPP, EI)</span>
-              <span class="comparison-value" id="localTaxes">$4,500</span>
-            </div>
-            
-            <div class="comparison-row">
-              <span class="comparison-label">Health Benefits</span>
-              <span class="comparison-value" id="localBenefits">$4,000</span>
-            </div>
-            
-            <div class="comparison-row">
-              <span class="comparison-label">Desk Space & Equipment</span>
-              <span class="comparison-value" id="localDesk">$4,800</span>
-            </div>
-            
-            <div class="comparison-row">
-              <span class="comparison-label">Software Licenses</span>
-              <span class="comparison-value" id="localSoftware">$1,200</span>
-            </div>
-            
-            <div class="comparison-row">
-              <span class="comparison-label">Onboarding & Training</span>
-              <span class="comparison-value" id="localOnboarding">$1,500</span>
-            </div>
-            
-            <div class="comparison-row">
-              <span class="comparison-label" style="font-size:1.1rem;">Total Annual Cost</span>
-              <span class="comparison-value" style="font-size:1.3rem;" id="localTotal">$74,000</span>
-            </div>
-          </div>
-          
-          <!-- Tech Chimps Column -->
-          <div class="comparison-column highlighted">
-            <div class="comparison-header">
-              <h3 style="color:var(--brand);">🌍 Tech Chimps (Offshore)</h3>
-            </div>
-            
-            <div class="comparison-row">
-              <span class="comparison-label">All-Inclusive Price</span>
-              <span class="comparison-value savings" id="offshoreSalary">$23,400</span>
-            </div>
-            
-            <div class="comparison-row">
-              <span class="comparison-label">Payroll Taxes (CPP, EI)</span>
-              <span class="comparison-value savings">Included</span>
-            </div>
-            
-            <div class="comparison-row">
-              <span class="comparison-label">Health Benefits</span>
-              <span class="comparison-value savings">Included</span>
-            </div>
-            
-            <div class="comparison-row">
-              <span class="comparison-label">Desk Space & Equipment</span>
-              <span class="comparison-value savings">Included</span>
-            </div>
-            
-            <div class="comparison-row">
-              <span class="comparison-label">Software Licenses</span>
-              <span class="comparison-value savings">Included</span>
-            </div>
-            
-            <div class="comparison-row">
-              <span class="comparison-label">Onboarding & Training</span>
-              <span class="comparison-value savings">We handle it</span>
-            </div>
-            
-            <div class="comparison-row">
-              <span class="comparison-label" style="font-size:1.1rem;">Total Annual Cost</span>
-              <span class="comparison-value savings" style="font-size:1.4rem;" id="offshoreTotal">$23,400</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="footnotes reveal">
-          <p><sup>*</sup>Based on Indeed.ca average for mid-level operations roles in Toronto, 2026</p>
-          <p><sup>**</sup>Desk space calculated at $400/month (Toronto commercial rent avg), plus equipment</p>
-          <p><sup>***</sup>Onboarding cost = manager time + reduced productivity during training period</p>
-        </div>
-        
-        <p style="text-align:center; margin-top:2.5rem; font-weight:700; color:var(--brand); font-size:1.3rem;" class="reveal">💰 Net Annual Savings per Hire: <span id="totalSavingsDisplay">$50,600</span></p>
-      </div>
-    </section>
-
-    <!-- FAQ Section - Home Page Style -->
     <section class="home-faq">
       <div class="container">
         <div style="text-align:center;" class="reveal">
@@ -833,59 +543,6 @@
       });
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
-    
-    // Savings Calculator with Dynamic Comparison
-    var slider = document.getElementById('hiresSlider');
-    var hireCount = document.getElementById('hireCount');
-    var savingsAmount = document.getElementById('savingsAmount');
-    var monthlyInvestment = document.getElementById('monthlyInvestment');
-    var localCost = document.getElementById('localCost');
-    
-    // Comparison values
-    var localSalary = document.getElementById('localSalary');
-    var localTaxes = document.getElementById('localTaxes');
-    var localBenefits = document.getElementById('localBenefits');
-    var localDesk = document.getElementById('localDesk');
-    var localSoftware = document.getElementById('localSoftware');
-    var localOnboarding = document.getElementById('localOnboarding');
-    var localTotal = document.getElementById('localTotal');
-    var offshoreSalary = document.getElementById('offshoreSalary');
-    var offshoreTotal = document.getElementById('offshoreTotal');
-    var totalSavingsDisplay = document.getElementById('totalSavingsDisplay');
-    
-    // Base values per hire
-    var baseSalary = 58000;
-    var baseTaxes = 4500;
-    var baseBenefits = 4000;
-    var baseDesk = 4800;
-    var baseSoftware = 1200;
-    var baseOnboarding = 1500;
-    var baseOffshore = 23400;
-    
-    slider.addEventListener('input', function() {
-      var hires = parseInt(this.value);
-      var localCostPerHire = baseSalary + baseTaxes + baseBenefits + baseDesk + baseSoftware + baseOnboarding;
-      var savingsPerHire = localCostPerHire - baseOffshore;
-      var monthlyPerHire = 1950;
-      
-      // Update calculator
-      hireCount.textContent = hires;
-      savingsAmount.textContent = '$' + (savingsPerHire * hires).toLocaleString();
-      monthlyInvestment.textContent = '$' + (monthlyPerHire * hires).toLocaleString();
-      localCost.textContent = '$' + (localCostPerHire * hires).toLocaleString();
-      
-      // Update comparison table
-      localSalary.textContent = '$' + (baseSalary * hires).toLocaleString();
-      localTaxes.textContent = '$' + (baseTaxes * hires).toLocaleString();
-      localBenefits.textContent = '$' + (baseBenefits * hires).toLocaleString();
-      localDesk.textContent = '$' + (baseDesk * hires).toLocaleString();
-      localSoftware.textContent = '$' + (baseSoftware * hires).toLocaleString();
-      localOnboarding.textContent = '$' + (baseOnboarding * hires).toLocaleString();
-      localTotal.textContent = '$' + (localCostPerHire * hires).toLocaleString();
-      offshoreSalary.textContent = '$' + (baseOffshore * hires).toLocaleString();
-      offshoreTotal.textContent = '$' + (baseOffshore * hires).toLocaleString();
-      totalSavingsDisplay.textContent = '$' + (savingsPerHire * hires).toLocaleString();
-    });
     
     // FAQ Accordion - Home page style
     document.querySelectorAll('.faq-trigger').forEach(function(btn) {
