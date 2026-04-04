@@ -252,6 +252,374 @@
       font-size: 1.1rem;
       margin-bottom: 1rem;
     }
+
+    /* ===== IMPROVED ROI CALCULATOR ===== */
+    .calculator-section {
+      padding: 6rem 0;
+      background: var(--bg-section);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .calculator-container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .calculator-header {
+      text-align: center;
+      color: var(--text);
+      margin-bottom: 3rem;
+    }
+
+    .calculator-header h2 {
+      font-size: 2.5rem;
+      margin-bottom: 0.75rem;
+      font-weight: 800;
+    }
+
+    .calculator-header p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .calculator-card {
+      background: var(--bg-page);
+      border-radius: 14px;
+      padding: 3rem;
+      box-shadow: var(--shadow);
+      border: 1.5px solid var(--border);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .calculator-controls {
+      margin-bottom: 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .calculator-controls {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .calculator-card {
+        padding: 2rem 1.5rem;
+      }
+    }
+
+    .control-group {
+      margin-bottom: 0;
+    }
+
+    .control-label {
+      display: block;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+      letter-spacing: -0.01em;
+    }
+
+    /* Plan Card Selector */
+    .plan-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-bottom: 0;
+    }
+
+    .plan-card {
+      position: relative;
+    }
+
+    .plan-card input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+    }
+
+    .plan-card label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 1.5rem 1.2rem;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background: var(--bg-section);
+    }
+
+    .plan-card input[type="radio"]:checked + label {
+      border-color: var(--brand);
+      background: linear-gradient(135deg, rgba(67,97,238,0.12) 0%, rgba(67,97,238,0.06) 100%);
+      box-shadow: 0 4px 12px rgba(67, 97, 238, 0.15);
+    }
+
+    .plan-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .plan-name {
+      font-weight: 700;
+      color: var(--text);
+      font-size: 0.9rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .plan-price {
+      font-size: 0.75rem;
+      color: var(--brand);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    /* Employee Count Buttons */
+    .employee-selector {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .employee-btn {
+      flex: 1;
+      padding: 0.8rem 0.75rem;
+      border: 1.5px solid var(--border);
+      background: var(--bg-section);
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--muted);
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+
+    .employee-btn:hover {
+      border-color: var(--brand);
+    }
+
+    .employee-btn.active {
+      background: linear-gradient(135deg, var(--brand), var(--brand-variant));
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 2px 8px rgba(67, 97, 238, 0.2);
+    }
+
+    /* Salary Input */
+    .salary-input-group {
+      position: relative;
+      width: 100%;
+    }
+
+    .salary-input-group input {
+      width: 100%;
+      padding: 0.9rem 1rem 0.9rem 2.5rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      background: var(--bg-page);
+      color: var(--text);
+      font-family: inherit;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .salary-input-group input:focus {
+      outline: none;
+      border-color: var(--brand);
+      box-shadow: 0 0 0 3px var(--focus);
+    }
+
+    .salary-input-group::before {
+      content: '$';
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+      padding-top: 2.5rem;
+      border-top: 1.5px solid var(--border);
+    }
+
+    @media (max-width: 600px) {
+      .results-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    .result-box {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      background: var(--bg-section);
+      border-radius: 12px;
+      border: 1.5px solid var(--border);
+      transition: all 0.3s ease;
+    }
+
+    .result-box:hover {
+      border-color: var(--brand);
+    }
+
+    .result-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .result-value {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1;
+    }
+
+    .result-box.highlight {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(16, 185, 129, 0.06) 100%);
+      border-color: #10b981;
+    }
+
+    .result-box.highlight .result-label {
+      color: #059669;
+    }
+
+    .result-box.highlight .result-value {
+      color: #10b981;
+    }
+
+    [data-theme="dark"] .result-box.highlight .result-label {
+      color: #34d399;
+    }
+
+    [data-theme="dark"] .result-box.highlight .result-value {
+      color: #34d399;
+    }
+
+    .comparison-bars {
+      margin: 2rem 0;
+      padding: 2.5rem 2rem;
+      background: var(--bg-section);
+      border-radius: 12px;
+      border: 1.5px solid var(--border);
+    }
+
+    .comparison-row {
+      margin-bottom: 2rem;
+    }
+
+    .comparison-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .comparison-label {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .comparison-bar {
+      height: 28px;
+      border-radius: 14px;
+      position: relative;
+      overflow: hidden;
+      background: var(--border);
+    }
+
+    .comparison-fill {
+      height: 100%;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 1rem;
+      font-weight: 700;
+      font-size: 0.8rem;
+      color: white;
+      transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .comparison-fill.current {
+      background: linear-gradient(90deg, #64748b, #475569);
+    }
+
+    .comparison-fill.techchimps {
+      background: linear-gradient(90deg, var(--brand), var(--brand-variant));
+    }
+
+    .five-year-projection {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(16, 185, 129, 0.06) 100%);
+      border: 1.5px solid #10b981;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-top: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .five-year-projection:hover {
+      border-color: #059669;
+    }
+
+    @media (max-width: 768px) {
+      .five-year-projection {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+      }
+    }
+
+    .five-year-projection-text h4 {
+      margin-bottom: 0.35rem;
+      font-size: 1.15rem;
+      color: var(--text);
+    }
+
+    .five-year-subtext {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .five-year-value {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #10b981;
+    }
+
+    [data-theme="dark"] .five-year-value {
+      color: #34d399;
+    }
+
+    .calculator-cta {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .calculator-cta .cta-btn {
+      display: inline-block;
+    }
   </style>
 </head>
 <body>
@@ -321,7 +689,6 @@
 
           <div class="pricing-card featured reveal reveal-delay-2" style="position:relative;">
             <div class="pricing-badge">Most Popular</div>
-            <!-- <div class="guarantee-badge" style="background:#fff;color:#4361ee;">2-Week Guarantee</div> -->
             <div class="guarantee-badge">2-Week Guarantee</div>
             <h3>Growth Specialist</h3>
             <div class="pricing-from" style="color:rgba(255,255,255,0.85);">Starting from</div>
@@ -404,6 +771,126 @@
         <div style="text-align:center;margin-top:2.5rem;" class="reveal">
           <p style="color:var(--muted);font-size:0.95rem;margin-bottom:1rem;">Need a custom combination or something not listed?</p>
           <a href="contact.html" class="cta-btn">Contact Us for Custom Pricing</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="calculator-section">
+      <div class="container calculator-container">
+        <div class="calculator-header reveal">
+          <h2>Calculate Your Savings</h2>
+          <p>Select a plan, number of employees, and salary to see your exact cost and savings.</p>
+        </div>
+        
+        <div class="calculator-card reveal">
+          <!-- Plan Selection Cards -->
+          <div class="control-group" style="margin-bottom: 2.5rem;">
+            <label class="control-label">Select Your Plan</label>
+            <div class="plan-cards">
+              <div class="plan-card">
+                <input type="radio" name="plan" id="plan-starter" value="starter" checked data-salary="52000" data-employees="1">
+                <label for="plan-starter">
+                  <div class="plan-icon">📋</div>
+                  <div class="plan-name">Starter Admin</div>
+                  <div class="plan-price">$1,499/mo</div>
+                </label>
+              </div>
+              
+              <div class="plan-card">
+                <input type="radio" name="plan" id="plan-specialist" value="specialist" data-salary="60000" data-employees="1">
+                <label for="plan-specialist">
+                  <div class="plan-icon">💼</div>
+                  <div class="plan-name">Growth Specialist</div>
+                  <div class="plan-price">$2,999/mo</div>
+                </label>
+              </div>
+              
+              <div class="plan-card">
+                <input type="radio" name="plan" id="plan-enterprise" value="enterprise" data-salary="240000" data-employees="4">
+                <label for="plan-enterprise">
+                  <div class="plan-icon">🚀</div>
+                  <div class="plan-name">Enterprise Pod</div>
+                  <div class="plan-price">$5,500/mo</div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="calculator-controls">
+            <!-- Number of Employees -->
+            <div class="control-group">
+              <label class="control-label">Number of Employees</label>
+              <div class="employee-selector">
+                <button class="employee-btn active" data-count="1">1</button>
+                <button class="employee-btn" data-count="2">2</button>
+                <button class="employee-btn" data-count="3">3</button>
+                <button class="employee-btn" data-count="4">4+</button>
+              </div>
+            </div>
+
+            <!-- Salary Input -->
+            <div class="control-group">
+              <label class="control-label" for="current-salary">Annual Salary (CAD)</label>
+              <div class="salary-input-group">
+                <input type="number" id="current-salary" value="52000" min="0" step="1000" placeholder="e.g., 52000">
+              </div>
+            </div>
+          </div>
+          
+          <div class="comparison-bars">
+            <div class="comparison-row">
+              <div class="comparison-label">
+                <span>Current Annual Cost</span>
+                <span id="current-cost-label">$52,000</span>
+              </div>
+              <div class="comparison-bar">
+                <div class="comparison-fill current" id="current-bar" style="width: 100%;">
+                  <span id="current-bar-label">$52,000</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="comparison-row">
+              <div class="comparison-label">
+                <span>Tech Chimps All-Inclusive Cost</span>
+                <span id="techchimps-cost-label">$17,988</span>
+              </div>
+              <div class="comparison-bar">
+                <div class="comparison-fill techchimps" id="techchimps-bar" style="width: 34.6%;">
+                  <span id="techchimps-bar-label">$17,988</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="results-grid">
+            <div class="result-box">
+              <div class="result-label">Monthly Cost</div>
+              <div class="result-value" id="monthly-cost">$1,499</div>
+            </div>
+            
+            <div class="result-box">
+              <div class="result-label">Annual Savings</div>
+              <div class="result-value" id="annual-savings">$34,012</div>
+            </div>
+            
+            <div class="result-box highlight">
+              <div class="result-label">Savings %</div>
+              <div class="result-value" id="savings-percent">65%</div>
+            </div>
+          </div>
+          
+          <div class="five-year-projection">
+            <div class="five-year-projection-text">
+              <h4>5-Year Projected Savings</h4>
+              <div class="five-year-subtext">Capital available to reinvest in growth</div>
+            </div>
+            <div class="five-year-value" id="five-year-savings">$170,060</div>
+          </div>
+          
+          <div class="calculator-cta">
+            <a href="https://calendly.com/info-techchimps/30min" target="_blank" rel="noopener" class="cta-btn">Schedule Cost Analysis</a>
+          </div>
         </div>
       </div>
     </section>
@@ -530,7 +1017,7 @@
           <p>Toronto-based operations experts helping businesses scale by delegating the work that slows them down.</p>
           <div class="footer-socials">
             <a href="https://www.linkedin.com/company/tech-chimps" target="_blank" rel="noopener" aria-label="LinkedIn">💼</a>
-            <a href="/cdn-cgi/l/email-protection#bcd5d2dad392c8d9dfd4dfd4d5d1cccffcdbd1ddd5d092dfd3d1" aria-label="Email">📧</a>
+            <a href="mailto:info.techchimps@gmail.com" aria-label="Email">📧</a>
           </div>
         </div>
         <div class="footer-col">
@@ -550,7 +1037,7 @@
         </div>
         <div class="footer-col">
           <h5>Contact</h5>
-          info.techchimps@gmail.com
+          <a href="mailto:info.techchimps@gmail.com">info.techchimps@gmail.com</a>
           <a href="contact.html">Contact Page</a>
           <a href="https://calendly.com/info-techchimps/30min" target="_blank" rel="noopener" class="cta-btn" style="margin-top:.8rem;font-size:.85rem;padding:.5em 1.1em;display:inline-block;">📅 Book a Call</a>
         </div>
@@ -562,14 +1049,13 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="theme-switch.js"></script>
+  <script src="theme-switch.js"></script>
   <script>
     // Dynamic next start date (3 weeks from today)
     function getNextStartDate() {
       const today = new Date();
       const nextDate = new Date(today);
-      nextDate.setDate(today.getDate() + 21); // 3 weeks from now
-      
+      nextDate.setDate(today.getDate() + 21);
       const options = { month: 'long', day: 'numeric', year: 'numeric' };
       return nextDate.toLocaleDateString('en-US', options);
     }
@@ -595,18 +1081,104 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
     
-    // FAQ Accordion - Home page style
+    // FAQ Accordion
     document.querySelectorAll('.faq-trigger').forEach(function(btn) {
       btn.addEventListener('click', function() {
         var entry = btn.closest('.faq-entry');
         var isOpen = entry.classList.contains('open');
-        document.querySelectorAll('.faq-entry').forEach(function(e) { 
-          e.classList.remove('open'); 
+        document.querySelectorAll('.faq-entry').forEach(function(e) {
+          e.classList.remove('open');
         });
         if (!isOpen) entry.classList.add('open');
       });
     });
+    
+    // Calculator Logic
+    var planRadios = document.querySelectorAll('input[name="plan"]');
+    var employeeButtons = document.querySelectorAll('.employee-btn');
+    var salaryInput = document.getElementById('current-salary');
+    
+    var planPrices = {
+      'starter': 1499,
+      'specialist': 2999,
+      'enterprise': 5500
+    };
+    
+    var employeeCount = 1;
+    var salaryOverride = false;
+    
+    // Plan selection with default values
+    planRadios.forEach(function(radio) {
+      radio.addEventListener('change', function() {
+        var defaultSalary = this.dataset.salary;
+        var defaultEmployees = this.dataset.employees;
+        
+        // Update salary
+        salaryInput.value = defaultSalary;
+        salaryOverride = false;
+        
+        // Update employee count
+        employeeCount = parseInt(defaultEmployees);
+        employeeButtons.forEach(function(btn) {
+          btn.classList.remove('active');
+          if (parseInt(btn.dataset.count) == employeeCount) {
+            btn.classList.add('active');
+          }
+        });
+        
+        updateCalculator();
+      });
+    });
+    
+    // Employee button selection
+    employeeButtons.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        employeeButtons.forEach(function(b) { b.classList.remove('active'); });
+        this.classList.add('active');
+        employeeCount = parseInt(this.dataset.count);
+        updateCalculator();
+      });
+    });
+    
+    // Salary change
+    salaryInput.addEventListener('input', function() {
+      salaryOverride = true;
+      updateCalculator();
+    });
+    
+    function updateCalculator() {
+      var selectedPlan = document.querySelector('input[name="plan"]:checked').value;
+      var monthlyPlanCost = planPrices[selectedPlan];
+      var currentSalary = parseFloat(salaryInput.value) || 0;
+      
+      // Calculate totals for multiple employees
+      var totalMonthlyCost = monthlyPlanCost * employeeCount;
+      var totalAnnualCost = totalMonthlyCost * 12;
+      var totalCurrentAnnualCost = currentSalary * employeeCount;
+      
+      var annualSavings = totalCurrentAnnualCost - totalAnnualCost;
+      var savingsPercent = totalCurrentAnnualCost > 0 ? Math.round((annualSavings / totalCurrentAnnualCost) * 100) : 0;
+      var fiveYearSavings = annualSavings * 5;
+      
+      // Update comparison bars
+      var barPercentage = totalCurrentAnnualCost > 0 ? (totalAnnualCost / totalCurrentAnnualCost) * 100 : 0;
+      
+      document.getElementById('current-cost-label').textContent = '$' + totalCurrentAnnualCost.toLocaleString();
+      document.getElementById('current-bar-label').textContent = '$' + totalCurrentAnnualCost.toLocaleString();
+      
+      document.getElementById('techchimps-cost-label').textContent = '$' + totalAnnualCost.toLocaleString();
+      document.getElementById('techchimps-bar-label').textContent = '$' + totalAnnualCost.toLocaleString();
+      document.getElementById('techchimps-bar').style.width = Math.min(barPercentage, 100) + '%';
+      
+      // Update result boxes
+      document.getElementById('annual-savings').textContent = '$' + annualSavings.toLocaleString();
+      document.getElementById('savings-percent').textContent = savingsPercent + '%';
+      document.getElementById('monthly-cost').textContent = '$' + totalMonthlyCost.toLocaleString();
+      document.getElementById('five-year-savings').textContent = '$' + fiveYearSavings.toLocaleString();
+    }
+    
+    // Initialize
+    updateCalculator();
   </script>
-  
-  </body>
+</body>
 </html>
