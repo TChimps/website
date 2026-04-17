@@ -1,0 +1,14 @@
+# Tech Chimps - robots.txt
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://tchimps.github.io/website/sitemap.xml
+
+# Disallow crawling of certain file types (optional - saves crawl budget)
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /mailto.js
+Disallow: /theme-switch.js
